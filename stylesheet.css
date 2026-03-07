@@ -992,14 +992,14 @@ nav A:hover{
 }
 
 .connect-form textarea {
-    resize: vertical;
+    resize: none;
     min-height: 120px;
 }
 
 .connect-form input:focus,
 .connect-form textarea:focus {
-    border-color: #58b8ff;
-    box-shadow: 0 0 0 3px rgba(88, 184, 255, 0.25);
+    border-color: rgba(75, 31, 73, 0.36);
+    box-shadow: 0 0 0 3px rgba(75, 31, 73, 0.36);
 }
 
 .connect-form button {
