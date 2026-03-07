@@ -986,7 +986,7 @@ nav A:hover{
     padding: 13px 14px;
     font-size: 16px;
     font-weight: 500;
-    color: #f5edf8;
+    color: #ffffff;
     background: rgba(75, 31, 73, 0.36);
     outline: none;
 }
@@ -995,6 +995,11 @@ nav A:hover{
     resize: none;
     min-height: 120px;
 }
+.connect-form input::placeholder,
+.connect-form textarea::placeholder {
+    color: #ffffff;
+    opacity: 1;
+}
 
 .connect-form input:focus,
 .connect-form textarea:focus {
@@ -1002,6 +1007,15 @@ nav A:hover{
     box-shadow: 0 0 0 3px rgba(75, 31, 73, 0.36);
 }
 
+.connect-form input:-webkit-autofill,
+.connect-form input:-webkit-autofill:hover,
+.connect-form input:-webkit-autofill:focus,
+.connect-form textarea:-webkit-autofill,
+.connect-form textarea:-webkit-autofill:hover,
+.connect-form textarea:-webkit-autofill:focus {
+    -webkit-text-fill-color: #ffffff;
+    transition: background-color 9999s ease-in-out 0s;
+}
 .connect-form button {
     border: 2px solid #4b1f49;
     background: #4b1f49;
