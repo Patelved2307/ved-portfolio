@@ -986,7 +986,9 @@ nav A:hover{
     padding: 13px 14px;
     font-size: 16px;
     font-weight: 500;
-    color: #ffffff;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    caret-color: #ffffff;
     background: rgba(75, 31, 73, 0.36);
     outline: none;
 }
@@ -996,10 +998,17 @@ nav A:hover{
     min-height: 120px;
 }
 .connect-form input::placeholder,
-.connect-form textarea::placeholder {
-    color: #ffffff;
+.connect-form textarea::placeholder,
+.connect-form input::-webkit-input-placeholder,
+.connect-form textarea::-webkit-input-placeholder,
+.connect-form input::-moz-placeholder,
+.connect-form textarea::-moz-placeholder,
+.connect-form input:-ms-input-placeholder,
+.connect-form textarea:-ms-input-placeholder {
+    color: #ffffff !important;
     opacity: 1;
 }
+
 
 .connect-form input:focus,
 .connect-form textarea:focus {
@@ -1468,3 +1477,4 @@ html, body {
     #resume-btn, #hire-me { width: 100%; text-align: center; }
     .startup-mini-item { width: 44px; height: 44px; }
 }
+
