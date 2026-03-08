@@ -3,322 +3,316 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Patel Ved — UI/UX Designer & Frontend Developer</title>
     <link rel="stylesheet" href="stylesheet.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <script src="portfolio.js">
-    </script>
 </head>
 <body>
-    <div class="startup-ad" id="startup-ad">
-        <div class="startup-ad-box">
-            <button class="startup-ad-close" id="startup-ad-close" aria-label="Close ad">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            <p class="startup-ad-tag">Future Startups</p>
-            <h3>Launching Soon: Trinetra &amp; TravelX</h3>
-            <p class="startup-ad-subtext">Both startups are currently in development phase.</p>
 
-            <div class="startup-ad-grid">
-                <a href="startup-trinetra.html" class="startup-ad-card">
-                    <img src="Trinetra.jpg" alt="Trinetra startup">
-                    <div>
-                        <h4>Trinetra</h4>
-                        <p>Misinformation detection platform focused on clarity and trust.</p>
-                    </div>
-                </a>
+<!-- Custom Cursor -->
+<div class="cursor" id="cursor">
+    <div class="cursor-ring" id="cursor-ring"></div>
+    <div class="cursor-dot"  id="cursor-dot"></div>
+</div>
 
-                <a href="startup-travelx.html" class="startup-ad-card">
-                    <img src="logo 2.png" alt="TravelX startup">
-                    <div>
-                        <h4>TravelX</h4>
-                        <p>Smart travel planning and booking experience for modern users.</p>
-                    </div>
-                </a>
+<!-- Startup Ad -->
+<div class="startup-ad" id="startup-ad">
+    <div class="startup-ad-box">
+        <button class="startup-ad-close" id="startup-ad-close" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+        <p class="startup-ad-tag">Future Ventures</p>
+        <h3>Launching Soon: Trinetra &amp; TravelX</h3>
+        <p class="startup-ad-subtext">Two startups currently in active development phase.</p>
+        <div class="startup-ad-grid">
+            <a href="startup-trinetra.html" class="startup-ad-card">
+                <img src="Trinetra.jpg" alt="Trinetra">
+                <div><h4>Trinetra</h4><p>Misinformation detection platform focused on clarity and trust.</p></div>
+            </a>
+            <a href="startup-travelx.html" class="startup-ad-card">
+                <img src="logo 2.png" alt="TravelX">
+                <div><h4>TravelX</h4><p>Smart travel planning and booking experience for modern users.</p></div>
+            </a>
+        </div>
+        <p class="startup-ad-timer">Closes in <span id="startup-ad-seconds">5</span>s</p>
+    </div>
+</div>
+
+<!-- Startup Mini -->
+<div class="startup-mini" id="startup-mini">
+    <a href="startup-trinetra.html" class="startup-mini-item"><img src="Trinetra.jpg" alt="Trinetra"></a>
+    <a href="startup-travelx.html" class="startup-mini-item"><img src="logo 2.png" alt="TravelX"></a>
+</div>
+
+<!-- Header -->
+<div class="main">
+    <header id="header">
+        <div class="logo">Ved<span>.</span></div>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+        <nav id="main-nav">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#project">Project</a>
+            <a href="#skills">Skills</a>
+            <a href="#connect">Connect</a>
+        </nav>
+    </header>
+</div>
+
+<!-- HOME -->
+<section id="home">
+    <div class="home-bg-text">VED</div>
+    <div class="content">
+        <div class="text">
+            <div class="home-eyebrow">UI/UX Designer &amp; Developer</div>
+            <h1 class="name">Patel <em>Ved</em><br>Alpeshkumar</h1>
+            <p class="role">Frontend Developer | UI/UX Designer</p>
+            <div class="role-badge">
+                <span class="role-badge-dot"></span>
+                Available for opportunities
             </div>
-
-            <p class="startup-ad-timer">This ad closes automatically in <span id="startup-ad-seconds">5</span>s</p>
+            <p class="description">Crafting seamless and user-friendly digital interfaces that blend creativity with usability — delivering impactful experiences that feel simple, purposeful, and memorable.</p>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/ved_2307" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/patel-ved-327a55326/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.youtube.com/@ved2307" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://x.com/PatelVed358962" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                <a href="https://www.behance.net/patelved6" target="_blank"><i class="fab fa-behance"></i></a>
+            </div>
+            <div class="button">
+                <a href="Resume%20-%20Patel%20Ved.pdf" download="Resume-Patel-Ved.pdf" id="resume-btn"><i class="fa-solid fa-download"></i> Download Resume</a>
+                <a href="hire-me.html" id="hire-me"><i class="fa-solid fa-briefcase"></i> Hire Me</a>
+            </div>
+        </div>
+        <div class="image">
+            <div class="image-frame">
+                <img src="my pic.jpeg" alt="Patel Ved">
+            </div>
+            <div class="image-stats">
+                <div class="image-stats-num">1+</div>
+                <div class="image-stats-label">Years Design</div>
+            </div>
         </div>
     </div>
-    <div class="startup-mini" id="startup-mini">
-        <a href="startup-trinetra.html" class="startup-mini-item" aria-label="Trinetra Startup">
-            <img src="Trinetra.jpg" alt="Trinetra icon">
-        </a>
-        <a href="startup-travelx.html" class="startup-mini-item" aria-label="TravelX Startup">
-            <img src="logo 2.png" alt="TravelX icon">
-        </a>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+    <div class="about-container">
+        <div class="about-image-col reveal">
+            <div class="about-img-wrap">
+                <div class="about-img-inner"><img src="my pic.jpeg" alt="Patel Ved"></div>
+                <div class="about-img-tag">UI/UX Designer</div>
+            </div>
+        </div>
+        <div class="about-text-col">
+            <div class="section-label reveal">About Me</div>
+            <h2 class="section-title reveal reveal-delay-1">Designing with <em>purpose</em></h2>
+            <p class="reveal reveal-delay-2">I'm a passionate UI/UX Designer who enjoys creating intuitive and user-centered digital experiences that solve real-world problems. I focus on understanding user needs, behaviors, and challenges before translating ideas into thoughtful design solutions.</p>
+            <p class="reveal reveal-delay-2">My design process includes user research, wireframing, prototyping, and visual design — ensuring clarity, usability, and consistency throughout every experience. Good design goes beyond aesthetics; it creates meaningful, accessible interactions.</p>
+            <div class="about-stats reveal reveal-delay-3">
+                <div class="about-stat"><div class="about-stat-num">4+</div><div class="about-stat-label">Projects</div></div>
+                <div class="about-stat"><div class="about-stat-num">1+</div><div class="about-stat-label">Years Exp</div></div>
+                <div class="about-stat"><div class="about-stat-num">12+</div><div class="about-stat-label">Skills</div></div>
+            </div>
+            <div class="about-actions reveal reveal-delay-4">
+                <a href="#connect" class="btn-gold">Let's Connect <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="about-biography.html" class="btn-outline">Read More <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
     </div>
+</section>
 
-    <div class="main">
-        <header>
-            <div class="logo"> Portfolio </div>
-            <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
-                <span></span><span></span><span></span>
-            </button>
-            <nav id="main-nav">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#project">Project</a>
-                <a href="#skills">Skills</a>
-                <a href="#connect">Connect</a>
-            </nav>
-        </header>
-    </div>
-    
-    <!-- home section --> 
-    <section id="home">
-
-        <div class="content">
-            <div class="text">
-                <div class="name">
-                    Patel Ved Alpeshkumar
-                </div>
-                <div class="role">
-                    Frontend Developer | UI/UX Designer
-                </div>
-                <div class="description">
-                    UI/UX Designer crafting seamless and user-friendly digital interfaces.Blending creativity with usability to deliver impactful experiences.
-                </div>
-                <div class="social-icons">
-                    <a href="https://www.instagram.com/ved_2307?igsh=anpndXFudHl4djln" target="_blank">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-
-                    <a href="https://www.linkedin.com/in/patel-ved-327a55326/" target="_blank">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-
-                    <a href="https://www.youtube.com/@ved2307" target="_blank">
-                        <i class="fab fa-youtube"></i>
-                    </a>
-
-                    <a href="https://x.com/PatelVed358962" target="_blank">
-                        <i class="fab fa-x-twitter"></i>
-                    </a>
-
-                    <a href="https://www.behance.net/patelved6" target="_blank">
-                        <i class="fab fa-behance"></i>
-                    </a>
-                </div>
-
-                <div class="button">
-                    <a href="Resume%20-%20Patel%20Ved.pdf" download="Resume-Patel-Ved.pdf" id="resume-btn">Download Resume</a>
-                    <a href="hire-me.html" id="hire-me">Hire Me</a>
-                </div>
-
-            </div>
-
-            <div class="image">
-                <img src="my pic.jpeg" alt="Profile Image">
+<!-- PROJECT -->
+<section id="project">
+    <div class="project-container">
+        <div class="project-header">
+            <div>
+                <div class="section-label reveal">My Work</div>
+                <h2 class="section-title reveal reveal-delay-1">Selected <em>Projects</em></h2>
             </div>
         </div>
-
-    </section>
-    
-    <!-- about section -->
-    <section id="about">
-        
-        <div class="about-container">
-            
-            <div class="about-text">
-                <h2>About Me</h2>
-
-                <p>
-                    I’m a passionate UI/UX Designer who enjoys creating intuitive and user-centered digital experiences that solve real-world problems. 
-                    I focus on understanding user needs, behaviors, and challenges before translating ideas into thoughtful and functional design solutions. 
-                    My design process includes user research, wireframing, prototyping, and visual design, ensuring clarity, usability, and consistency throughout the experience. 
-                    I believe good design goes beyond aesthetics — it’s about creating meaningful, accessible, and engaging interactions. 
-                    Through projects and hands-on experience, I continuously explore ways to improve usability, interaction flow, and overall user satisfaction while delivering designs that feel simple, purposeful, and impactful.
-                </p>
-                <div class="about-actions">
-                    <a href="#connect" class="read-btn">Let's Connect -></a>
-                    <a href="about-biography.html" class="bio-btn">Read More About Me</a>
-                </div>
-            </div>
-
-            <div class="about-image-wrapper">
-                <div class="image-card">
-                    <img src="my pic.jpeg" alt="Patel Ved">
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Project section -->
-    <section id="project">
-        <div class="project-container">
-            <h2>Projects</h2>
-
-            <div class="project-grid">
-                <article class="project-card">
-                    <div class="project-card-inner">
-                        <img src="Logo (2).png" alt="Vrudhseva  - Elder Care Health Monitoring App">
-                        <p>
-                            Designed a user-friendly health monitoring app for elder care, focusing on intuitive navigation and clear visual cues. 
-                            The app provides real-time health tracking, medication reminders, and emergency alerts to enhance the safety and well-being of elderly users.
-                        </p>
-                    </div>
-                    <h3>Vrudhseva - Elder Care Health Monitoring App</h3>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-card-inner">
-                        <img src="logo 2.png" alt="TravelX - Travel Booking Website">
-                        <p>
-                            Created a responsive travel booking website with a focus on seamless user experience. 
-                            Implemented intuitive search, personalized recommendations, and a streamlined booking process to enhance user engagement and satisfaction.
-                        </p>
-                    </div>
-                    <h3>TravelX - Travel Booking Website</h3>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-card-inner">
-                        <img src="Trinetra.jpg" alt="Trinetra - Misinformation detection App">
-                        <p>
-                            Developed a misinformation detection app with a user-friendly interface. 
-                            Designed to help users identify and combat misinformation through clear visual cues, educational resources, and real-time fact-checking features.
-                        </p>
-                    </div>
-                    <h3>Trinetra - Misinformation Detection App</h3>
-                </article>
-
-                <article class="project-card project-card-cta">
-                    <div class="project-card-inner">
-                        <img src="uiux.jpg" alt="Collection of design projects">
-                        <p>
-                            Explore additional UI/UX and web design case studies with
-                            complete process, wireframes, and final polished interfaces.
-                        </p>
-                    </div>
-                    <a href="projects-coming-soon.html" class="project-view-btn">View my all projects</a>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills section -->
-    <section id="skills">
-        <div class="skills-container">
-            <h2>Skills</h2>
-            <p class="skills-subtitle">
-                Blend of product thinking, UI/UX design, frontend development, and team execution.
-            </p>
-
-            <article class="skills-top-card">
-                <h3>Top Skills</h3>
-                <div class="skills-pill-wrap">
-                    <span class="skill-pill featured">Team Leadership</span>
-                    <span class="skill-pill featured">Flutter</span>
-                    <span class="skill-pill featured">UI/UX Design</span>
-                    <span class="skill-pill featured">Figma</span>
-                    <span class="skill-pill featured">UX Flow</span>
+        <div class="project-grid">
+            <article class="project-card reveal">
+                <div class="project-card-img"><img src="Logo (2).png" alt="Vrudhseva"></div>
+                <div class="project-card-body">
+                    <span class="project-tag">UI/UX Design</span>
+                    <h3>Vrudhseva — Elder Care Health App</h3>
+                    <p>Designed a user-friendly health monitoring app for elder care with intuitive navigation, real-time health tracking, medication reminders, and emergency alerts.</p>
                 </div>
             </article>
+            <article class="project-card reveal reveal-delay-1">
+                <div class="project-card-img"><img src="logo 2.png" alt="TravelX"></div>
+                <div class="project-card-body">
+                    <span class="project-tag">Web Design</span>
+                    <h3>TravelX — Travel Booking Website</h3>
+                    <p>Created a responsive travel booking website with seamless UX — intuitive search, personalised recommendations, and a streamlined booking process.</p>
+                </div>
+            </article>
+            <article class="project-card reveal reveal-delay-2">
+                <div class="project-card-img"><img src="Trinetra.jpg" alt="Trinetra"></div>
+                <div class="project-card-body">
+                    <span class="project-tag">App Design</span>
+                    <h3>Trinetra — Misinformation Detection</h3>
+                    <p>Developed a misinformation detection app with clear visual cues, educational resources, and real-time fact-checking features to help users identify false content.</p>
+                </div>
+            </article>
+            <article class="project-card project-card-cta reveal reveal-delay-3">
+                <div class="project-card-body">
+                    <span class="project-tag">All Projects</span>
+                    <h3>Explore More Case Studies</h3>
+                    <p>Discover additional UI/UX and web design projects with complete process documentation, wireframes, and polished final interfaces.</p>
+                    <a href="projects-coming-soon.html" class="project-view-btn">View All Projects <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
 
-            <article class="skills-all-card">
+<!-- SKILLS -->
+<section id="skills">
+    <div class="skills-container">
+        <div class="section-label reveal">Expertise</div>
+        <h2 class="section-title reveal reveal-delay-1">Skills &amp; <em>Tools</em></h2>
+        <div class="skills-grid">
+            <div class="skills-featured reveal reveal-delay-2">
+                <h3>Top Skills</h3>
+                <div class="skills-pill-wrap">
+                    <span class="skill-pill">Team Leadership</span>
+                    <span class="skill-pill">Flutter</span>
+                    <span class="skill-pill">UI/UX Design</span>
+                    <span class="skill-pill">Figma</span>
+                    <span class="skill-pill">UX Flow</span>
+                </div>
+            </div>
+            <div class="skills-all reveal reveal-delay-3">
                 <h3>All Skills</h3>
                 <ul class="skills-list">
-                    <li>Frontend Development (HTML, CSS, JavaScript)</li>
+                    <li>HTML / CSS / JavaScript</li>
                     <li>TypeScript (Beginner)</li>
                     <li>Flutter</li>
-                    <li>UI/UX Design (App and Web)</li>
-                    <li>UX Flow and User Journey Planning</li>
+                    <li>UI/UX Design</li>
+                    <li>UX Flow Planning</li>
                     <li>Wireframing</li>
                     <li>Figma</li>
                     <li>WordPress</li>
-                    <li>Team Leadership and Team Handling</li>
+                    <li>Team Leadership</li>
                     <li>Problem Solving</li>
-                    <li>Graphic Designing</li>
+                    <li>Graphic Design</li>
                     <li>Research Skills</li>
                 </ul>
-
-                <a href="https://www.linkedin.com/in/patel-ved-327a55326/" target="_blank" class="skills-link">
-                    And more, visit my LinkedIn profile
-                </a>
-            </article>
-        </div>
-    </section>
-
-    <!-- Connect section -->
-    <section id="connect">
-        <div class="connect-wrap">
-            <div class="connect-left">
-                <h2>Connect</h2>
-                <p class="connect-subtitle">Let's create meaningful digital experiences together.</p>
-
-                <form class="connect-form">
-                    <input type="text" placeholder="Full Name">
-                    <textarea rows="4" placeholder="Send Message"></textarea>
-                    <button type="button">Send Message</button>
-                </form>
-
-                <p class="connect-note">
-                    I'm open to internships, freelance projects, and design collaborations.
-                    Feel free to reach out if you'd like to discuss ideas or opportunities.
-                </p>
-
-                <div class="connect-social">
-                    <a href="https://www.linkedin.com/in/patel-ved-327a55326/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://wa.me/919979809442" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                    <a href="https://www.youtube.com/@ved2307" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                    <a href="https://x.com/PatelVed358962" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.behance.net/patelved6" target="_blank" aria-label="Behance"><i class="fab fa-behance"></i></a>
-                </div>
-            </div>
-
-            <div class="connect-visual">
-                <img src="image-removebg-preview.png" alt="Social network illustration">
+                <a href="https://www.linkedin.com/in/patel-ved-327a55326/" target="_blank" class="skills-link"><i class="fab fa-linkedin-in"></i> More on LinkedIn</a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <footer class="site-footer">
-        <div class="footer-wrap">
-            <div class="footer-brand">
-                <h3>Patel Ved</h3>
-                <p>UI/UX Designer and Frontend Developer creating purposeful digital products.</p>
-            </div>
-
-            <div class="footer-links">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#project">Projects</a>
-                <a href="#skills">Skills</a>
-                <a href="#connect">Connect</a>
-            </div>
-
-            <div class="footer-social">
-                <a href="https://www.linkedin.com/in/patel-ved-327a55326/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://www.instagram.com/ved_2307?igsh=anpndXFudHl4djln" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.behance.net/patelved6" target="_blank" aria-label="Behance"><i class="fab fa-behance"></i></a>
-                <a href="#home" class="to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></a>
+<!-- CONNECT -->
+<section id="connect">
+    <div class="connect-bg-text">CONNECT</div>
+    <div class="connect-wrap">
+        <div class="connect-left">
+            <div class="section-label reveal">Get In Touch</div>
+            <h2 class="reveal reveal-delay-1">Let's build something <em>great</em></h2>
+            <p class="connect-subtitle reveal reveal-delay-2">I'm open to internships, freelance projects, and design collaborations. Feel free to reach out if you'd like to discuss ideas or opportunities.</p>
+            <form class="connect-form reveal reveal-delay-3">
+                <input type="text" placeholder="Your Full Name">
+                <textarea rows="4" placeholder="Your Message"></textarea>
+                <button type="button">Send Message <i class="fa-solid fa-paper-plane"></i></button>
+            </form>
+            <p class="connect-note">Form submission coming soon — use the links below for instant contact.</p>
+            <div class="connect-social reveal reveal-delay-4">
+                <a href="https://www.linkedin.com/in/patel-ved-327a55326/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://wa.me/919979809442" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.youtube.com/@ved2307" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://x.com/PatelVed358962" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                <a href="https://www.behance.net/patelved6" target="_blank"><i class="fab fa-behance"></i></a>
             </div>
         </div>
+        <div class="connect-right reveal reveal-delay-2">
+            <a href="mailto:patelved2307@gmail.com" class="connect-card">
+                <div class="connect-card-icon"><i class="fa-solid fa-envelope"></i></div>
+                <div><div class="connect-card-label">Email</div><div class="connect-card-value">patelved2307@gmail.com</div></div>
+            </a>
+            <a href="https://www.linkedin.com/in/patel-ved-327a55326/" target="_blank" class="connect-card">
+                <div class="connect-card-icon"><i class="fab fa-linkedin-in"></i></div>
+                <div><div class="connect-card-label">LinkedIn</div><div class="connect-card-value">Patel Ved</div></div>
+            </a>
+            <a href="https://wa.me/919979809442" target="_blank" class="connect-card">
+                <div class="connect-card-icon"><i class="fab fa-whatsapp"></i></div>
+                <div><div class="connect-card-label">WhatsApp</div><div class="connect-card-value">+91 8686613712</div></div>
+            </a>
+            <a href="https://www.behance.net/patelved6" target="_blank" class="connect-card">
+                <div class="connect-card-icon"><i class="fab fa-behance"></i></div>
+                <div><div class="connect-card-label">Behance</div><div class="connect-card-value">Patel Ved</div></div>
+            </a>
+        </div>
+    </div>
+</section>
 
-        <p class="footer-copy">(c) 2026 Patel Ved. All rights reserved.</p>
-    </footer>
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="footer-wrap">
+        <div class="footer-brand">
+            <h3>Patel <span style="color:var(--gold)">Ved</span></h3>
+            <p>UI/UX Designer & Frontend Developer creating purposeful digital products.</p>
+        </div>
+        <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#project">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#connect">Connect</a>
+        </div>
+        <div class="footer-social">
+            <a href="https://www.linkedin.com/in/patel-ved-327a55326/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/ved_2307" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.behance.net/patelved6" target="_blank"><i class="fab fa-behance"></i></a>
+            <a href="#home" class="to-top"><i class="fa-solid fa-arrow-up"></i></a>
+        </div>
+    </div>
+    <p class="footer-copy">&copy; 2026 Patel Ved. All rights reserved.</p>
+</footer>
 
-    <script>
-        const navToggle = document.getElementById('nav-toggle');
-        const mainNav   = document.getElementById('main-nav');
-        if (navToggle && mainNav) {
-            navToggle.addEventListener('click', function () {
-                const isOpen = mainNav.classList.toggle('open');
-                navToggle.classList.toggle('open', isOpen);
-                navToggle.setAttribute('aria-expanded', String(isOpen));
-                navToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
-            });
-            mainNav.querySelectorAll('a').forEach(function (link) {
-                link.addEventListener('click', function () {
-                    mainNav.classList.remove('open');
-                    navToggle.classList.remove('open');
-                    navToggle.setAttribute('aria-expanded', 'false');
-                    navToggle.setAttribute('aria-label', 'Open menu');
-                });
-            });
-        }
-    </script>
+<script src="portfolio.js"></script>
+<script>
+// Custom Cursor
+const cursorDot = document.getElementById('cursor-dot');
+const cursorRing = document.getElementById('cursor-ring');
+let mouseX=0,mouseY=0,ringX=0,ringY=0;
+document.addEventListener('mousemove',e=>{mouseX=e.clientX;mouseY=e.clientY;cursorDot.style.left=mouseX+'px';cursorDot.style.top=mouseY+'px';});
+(function animateRing(){ringX+=(mouseX-ringX)*.12;ringY+=(mouseY-ringY)*.12;cursorRing.style.left=ringX+'px';cursorRing.style.top=ringY+'px';requestAnimationFrame(animateRing);})();
+document.querySelectorAll('a,button').forEach(el=>{
+    el.addEventListener('mouseenter',()=>{cursorDot.style.width='14px';cursorDot.style.height='14px';cursorRing.style.width='54px';cursorRing.style.height='54px';cursorRing.style.opacity='.3';});
+    el.addEventListener('mouseleave',()=>{cursorDot.style.width='8px';cursorDot.style.height='8px';cursorRing.style.width='38px';cursorRing.style.height='38px';cursorRing.style.opacity='.6';});
+});
+
+// Sticky header
+const header=document.getElementById('header');
+window.addEventListener('scroll',()=>{header.classList.toggle('scrolled',window.scrollY>60);});
+
+// Active nav
+const sections=document.querySelectorAll('section[id]');
+const navLinks=document.querySelectorAll('nav a');
+window.addEventListener('scroll',()=>{
+    let current='';
+    sections.forEach(s=>{if(window.scrollY>=s.offsetTop-120)current=s.getAttribute('id');});
+    navLinks.forEach(a=>{a.classList.toggle('active',a.getAttribute('href')==='#'+current);});
+});
+
+// Mobile nav
+const navToggle=document.getElementById('nav-toggle');
+const mainNav=document.getElementById('main-nav');
+navToggle.addEventListener('click',()=>{const open=mainNav.classList.toggle('open');navToggle.classList.toggle('open',open);navToggle.setAttribute('aria-expanded',String(open));});
+mainNav.querySelectorAll('a').forEach(a=>{a.addEventListener('click',()=>{mainNav.classList.remove('open');navToggle.classList.remove('open');navToggle.setAttribute('aria-expanded','false');});});
+
+// Scroll reveal
+const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+// Connect send
+const sendBtn=document.querySelector('#connect .connect-form button');
+if(sendBtn)sendBtn.addEventListener('click',()=>alert('Coming Soon! Please connect via the social links or contact cards.'));
+</script>
 </body>
 </html>

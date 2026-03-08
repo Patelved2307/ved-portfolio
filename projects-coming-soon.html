@@ -1,71 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - Coming Soon</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects — Patel Ved</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600;700&display=swap');
+:root{--cream:#FAF7F2;--cream2:#F2EDE4;--warm:#EDE5D8;--violet:#3A2147;--violet2:#5C3370;--accent:#D4A853;--accent2:#E8C47A;--text:#1A1020;--text2:#4A3555;--text3:#7A6585;--white:#FFFFFF;--shadow:rgba(58,33,71,0.10);--shadow2:rgba(58,33,71,0.20);}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html,body{overflow-x:hidden;width:100%;}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);}
+a{text-decoration:none;}
+img{max-width:100%;display:block;}
 
-        body {
-            min-height: 100vh;
-            display: grid;
-            place-items: center;
-            padding: 24px;
-            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(145deg, #2f173d 0%, #3A2147 52%, #4e3162 100%);
-            color: #ffffff;
-        }
+.page-nav{position:sticky;top:0;z-index:100;background:rgba(250,247,242,0.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(58,33,71,0.09);display:flex;justify-content:space-between;align-items:center;padding:0 52px;height:66px;box-shadow:0 2px 16px var(--shadow);}
+.nav-logo{font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:var(--violet);}
+.nav-logo::after{content:'.';color:var(--accent);}
+.nav-back{display:inline-flex;align-items:center;gap:8px;background:var(--violet);color:var(--white);border:2px solid var(--violet);border-radius:10px;padding:9px 18px;font-size:14px;font-weight:600;transition:all 0.25s;}
+.nav-back:hover{background:var(--violet2);border-color:var(--violet2);}
 
-        .coming-soon-card {
-            width: min(640px, 100%);
-            text-align: center;
-            padding: 42px 28px;
-            border-radius: 20px;
-            border: 1px solid rgba(193, 192, 216, 0.4);
-            background: rgba(255, 255, 255, 0.08);
-            box-shadow: 0 16px 30px rgba(10, 4, 14, 0.35);
-            backdrop-filter: blur(8px);
-        }
+.projects-hero{
+    padding:80px 52px 56px;
+    background:radial-gradient(ellipse 55% 50% at 85% 40%, rgba(212,168,83,0.13) 0%, transparent 65%), var(--cream);
+    position:relative;overflow:hidden;
+}
+.projects-hero::before{content:'WORK';position:absolute;top:16px;left:-10px;font-family:'Playfair Display',serif;font-size:150px;font-weight:900;color:rgba(58,33,71,0.04);pointer-events:none;user-select:none;}
+.hero-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1;}
 
-        .coming-soon-card h1 {
-            font-size: clamp(36px, 6vw, 56px);
-            margin-bottom: 12px;
-        }
+.section-label{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);margin-bottom:14px;}
+.section-label::before{content:'';width:28px;height:2px;background:var(--accent);display:block;}
 
-        .coming-soon-card p {
-            color: #e8ddf5;
-            font-size: 18px;
-            margin-bottom: 22px;
-        }
+.projects-hero h1{font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,60px);font-weight:900;color:var(--violet);line-height:1.1;margin-bottom:14px;}
+.projects-hero p{font-size:17px;color:var(--text2);line-height:1.7;max-width:600px;}
 
-        .back-home {
-            display: inline-block;
-            text-decoration: none;
-            background: #C1C0D8;
-            color: #3A2147;
-            border: 2px solid #C1C0D8;
-            border-radius: 10px;
-            padding: 10px 18px;
-            font-weight: 700;
-            transition: all 0.22s ease;
-        }
+/* GRID */
+.projects-body{padding:64px 52px 80px;max-width:1200px;margin:0 auto;}
 
-        .back-home:hover {
-            background: transparent;
-            color: #C1C0D8;
-        }
-    </style>
+.project-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;margin-bottom:40px;}
+
+.project-card{
+    background:var(--white);border-radius:20px;
+    border:1.5px solid rgba(58,33,71,0.08);
+    overflow:hidden;
+    box-shadow:0 4px 20px var(--shadow);
+    transition:transform 0.3s ease, box-shadow 0.3s ease;
+    position:relative;
+}
+.project-card:hover{transform:translateY(-6px);box-shadow:0 20px 48px var(--shadow2);}
+.project-card-bar{height:4px;background:linear-gradient(90deg,var(--accent),var(--violet2));}
+.project-card-body{padding:24px;}
+.project-card-img{width:100%;height:180px;object-fit:cover;border-radius:12px;margin-bottom:16px;border:1.5px solid var(--warm);}
+.project-card-tag{display:inline-block;padding:4px 12px;border-radius:999px;background:var(--cream);border:1.5px solid var(--warm);color:var(--text3);font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;}
+.project-card h2{font-family:'Playfair Display',serif;font-size:22px;color:var(--violet);margin-bottom:10px;line-height:1.2;}
+.project-card p{font-size:14px;line-height:1.7;color:var(--text2);}
+
+/* Coming soon card */
+.coming-soon-card{
+    background:linear-gradient(135deg,var(--violet) 0%,var(--violet2) 100%);
+    border-radius:20px;padding:40px;text-align:center;
+    box-shadow:0 12px 36px var(--shadow2);
+    grid-column:span 2;
+    position:relative;overflow:hidden;
+}
+.coming-soon-card::before{
+    content:'✦';
+    position:absolute;top:-20px;right:24px;
+    font-size:120px;color:rgba(255,255,255,0.04);
+    pointer-events:none;
+}
+.coming-soon-card h2{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,40px);color:var(--white);margin-bottom:12px;}
+.coming-soon-card p{color:rgba(255,255,255,0.65);font-size:16px;margin-bottom:28px;line-height:1.65;max-width:540px;margin-left:auto;margin-right:auto;}
+.coming-soon-badge{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:var(--violet);padding:8px 20px;border-radius:999px;font-size:13px;font-weight:800;margin-bottom:24px;}
+
+.cs-links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.cs-btn{background:rgba(255,255,255,0.15);color:var(--white);border:1.5px solid rgba(255,255,255,0.3);padding:11px 22px;border-radius:10px;font-size:14px;font-weight:600;transition:all 0.25s;}
+.cs-btn:hover{background:rgba(255,255,255,0.25);}
+.cs-btn.gold{background:var(--accent);color:var(--violet);border-color:var(--accent);}
+.cs-btn.gold:hover{background:var(--accent2);border-color:var(--accent2);}
+
+.page-footer{background:var(--violet);padding:28px 52px;}
+.footer-copy{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+.footer-copy span{color:rgba(255,255,255,0.4);font-size:12px;}
+.footer-copy a{color:rgba(255,255,255,0.55);font-size:13px;transition:color 0.2s;}
+.footer-copy a:hover{color:var(--accent);}
+
+@media(max-width:900px){
+    .page-nav,.projects-hero,.projects-body,.page-footer{padding-left:24px;padding-right:24px;}
+    .project-cards{grid-template-columns:1fr;}
+    .coming-soon-card{grid-column:span 1;}
+}
+@media(max-width:600px){
+    .page-nav{padding:0 16px;height:60px;}
+    .projects-hero{padding:40px 16px 36px;}
+    .projects-hero h1{font-size:clamp(28px,9vw,40px);}
+    .projects-body{padding:36px 16px 56px;}
+    .project-card-img{height:140px;}
+    .coming-soon-card{padding:28px 18px;}
+    .cs-links{flex-direction:column;align-items:center;}
+    .cs-btn{width:100%;text-align:center;}
+    .page-footer{padding:20px 16px;}
+    .footer-copy{flex-direction:column;text-align:center;}
+}
+</style>
 </head>
 <body>
-    <main class="coming-soon-card">
-        <h1>Coming Soon</h1>
-        <p>More project case studies will be added here shortly.</p>
-        <a href="index.html" class="back-home">Back to Home</a>
-    </main>
+
+<nav class="page-nav">
+    <div class="nav-logo">Portfolio</div>
+    <a href="index.html" class="nav-back"><i class="fa-solid fa-arrow-left"></i> Back to Portfolio</a>
+</nav>
+
+<section class="projects-hero">
+    <div class="hero-inner">
+        <p class="section-label">My Work</p>
+        <h1>All Projects</h1>
+        <p>Case studies, UI/UX designs, and frontend builds. More detailed case studies are on the way — stay tuned.</p>
+    </div>
+</section>
+
+<div class="projects-body">
+    <div class="project-cards">
+
+        <div class="project-card">
+            <div class="project-card-bar"></div>
+            <div class="project-card-body">
+                <img src="Logo (2).png" alt="Vrudhseva" class="project-card-img">
+                <span class="project-card-tag">UI/UX Design · Mobile App</span>
+                <h2>Vrudhseva — Elder Care Health App</h2>
+                <p>Designed a user-friendly health monitoring app for elder care, focusing on intuitive navigation, clear visual cues, real-time health tracking, and medication reminders.</p>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-card-bar"></div>
+            <div class="project-card-body">
+                <img src="logo 2.png" alt="TravelX" class="project-card-img">
+                <span class="project-card-tag">UI/UX Design · Web</span>
+                <h2>TravelX — Travel Booking Website</h2>
+                <p>Created a responsive travel booking website with seamless UX, personalized recommendations, and a streamlined booking process to enhance engagement and satisfaction.</p>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-card-bar"></div>
+            <div class="project-card-body">
+                <img src="Trinetra.jpg" alt="Trinetra" class="project-card-img">
+                <span class="project-card-tag">UI/UX Design · Mobile App</span>
+                <h2>Trinetra — Misinformation Detection App</h2>
+                <p>Developed a misinformation detection app with a user-friendly interface, clear visual cues, educational resources, and real-time fact-checking features.</p>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-card-bar"></div>
+            <div class="project-card-body">
+                <img src="uiux.jpg" alt="Portfolio Website" class="project-card-img">
+                <span class="project-card-tag">Frontend Development · Web</span>
+                <h2>Personal Portfolio Website</h2>
+                <p>Designed and built this portfolio from scratch using HTML, CSS, and JavaScript — featuring a responsive layout, smooth animations, and a clean editorial aesthetic.</p>
+            </div>
+        </div>
+
+        <!-- Coming Soon -->
+        <div class="coming-soon-card">
+            <div class="coming-soon-badge">🚀 More Coming Soon</div>
+            <h2>More Case Studies on the Way</h2>
+            <p>I'm currently documenting detailed UX case studies with research, wireframes, and final UI. Check back soon or connect to get notified.</p>
+            <div class="cs-links">
+                <a href="hire-me.html" class="cs-btn gold">Collaborate with Me ✦</a>
+                <a href="index.html#connect" class="cs-btn">Get Notified</a>
+                <a href="index.html" class="cs-btn">Back to Home</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<footer class="page-footer">
+    <div class="footer-copy">
+        <span>© 2026 Patel Ved. All rights reserved.</span>
+        <a href="index.html">← Back to Portfolio</a>
+    </div>
+</footer>
+
 </body>
 </html>

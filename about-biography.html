@@ -1,61 +1,298 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me - Coming Soon</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            min-height: 100vh;
-            display: grid;
-            place-items: center;
-            padding: 24px;
-            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(145deg, #2d173a 0%, #3A2147 52%, #4e3261 100%);
-            color: #ffffff;
-        }
-        .card {
-            width: min(640px, 100%);
-            text-align: center;
-            padding: 42px 28px;
-            border-radius: 20px;
-            border: 1px solid rgba(193, 192, 216, 0.4);
-            background: rgba(255, 255, 255, 0.08);
-            box-shadow: 0 16px 30px rgba(10, 4, 14, 0.35);
-            backdrop-filter: blur(8px);
-        }
-        h1 {
-            font-size: clamp(34px, 6vw, 54px);
-            margin-bottom: 10px;
-        }
-        p {
-            color: #e8ddf5;
-            font-size: 18px;
-            margin-bottom: 20px;
-        }
-        a {
-            display: inline-block;
-            text-decoration: none;
-            background: #C1C0D8;
-            color: #3A2147;
-            border: 2px solid #C1C0D8;
-            border-radius: 10px;
-            padding: 10px 18px;
-            font-weight: 700;
-            transition: all 0.22s ease;
-        }
-        a:hover {
-            background: transparent;
-            color: #C1C0D8;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Patel Ved</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600;700&display=swap');
+:root{--cream:#FAF7F2;--cream2:#F2EDE4;--warm:#EDE5D8;--violet:#3A2147;--violet2:#5C3370;--accent:#D4A853;--accent2:#E8C47A;--text:#1A1020;--text2:#4A3555;--text3:#7A6585;--white:#FFFFFF;--shadow:rgba(58,33,71,0.10);--shadow2:rgba(58,33,71,0.20);}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html,body{overflow-x:hidden;width:100%;}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);}
+a{text-decoration:none;}
+img{max-width:100%;display:block;}
+
+/* NAV */
+.page-nav{
+    position:sticky;top:0;z-index:100;
+    background:rgba(250,247,242,0.94);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(58,33,71,0.09);
+    display:flex;justify-content:space-between;align-items:center;
+    padding:0 52px;height:66px;
+    box-shadow:0 2px 16px var(--shadow);
+}
+.nav-logo{font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:var(--violet);}
+.nav-logo::after{content:'.';color:var(--accent);}
+.nav-back{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--violet);color:var(--white);
+    border:2px solid var(--violet);border-radius:10px;
+    padding:9px 18px;font-size:14px;font-weight:600;
+    transition:all 0.25s ease;
+}
+.nav-back:hover{background:var(--violet2);border-color:var(--violet2);}
+
+/* HERO */
+.about-hero{
+    background:
+        radial-gradient(ellipse 60% 50% at 90% 40%, rgba(212,168,83,0.13) 0%, transparent 65%),
+        radial-gradient(ellipse 40% 55% at 5% 80%, rgba(92,51,112,0.07) 0%, transparent 60%),
+        var(--cream);
+    padding:72px 52px 56px;
+    position:relative;overflow:hidden;
+}
+.about-hero::before{
+    content:'ABOUT';
+    position:absolute;top:16px;right:-16px;
+    font-family:'Playfair Display',serif;font-size:130px;font-weight:900;
+    color:rgba(58,33,71,0.04);pointer-events:none;user-select:none;letter-spacing:-4px;
+}
+.hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 0.7fr;gap:64px;align-items:center;position:relative;z-index:1;}
+
+.section-label{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);margin-bottom:14px;}
+.section-label::before{content:'';width:28px;height:2px;background:var(--accent);display:block;}
+
+.hero-text h1{font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,58px);font-weight:900;color:var(--violet);line-height:1.1;margin-bottom:16px;}
+.hero-text .subtitle{font-size:18px;color:var(--violet2);font-weight:500;margin-bottom:18px;}
+.hero-text p{font-size:16px;line-height:1.85;color:var(--text2);}
+
+.hero-photo{position:relative;justify-self:center;}
+.hero-photo-frame{
+    width:clamp(220px,24vw,320px);height:clamp(220px,24vw,320px);
+    border-radius:28px;overflow:hidden;
+    border:3px solid var(--white);
+    box-shadow:0 24px 56px var(--shadow2);
+    position:relative;z-index:1;
+}
+.hero-photo-frame img{width:100%;height:100%;object-fit:cover;border-radius:26px;}
+.hero-photo::before{
+    content:'';position:absolute;width:100%;height:100%;
+    top:14px;left:14px;
+    background:linear-gradient(135deg,var(--accent),var(--violet2));
+    border-radius:28px;z-index:0;
+}
+
+/* STATS ROW */
+.stats-row{background:var(--white);border-bottom:1px solid var(--warm);}
+.stats-inner{max-width:1100px;margin:0 auto;padding:32px 52px;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+.stat-item{text-align:center;padding:20px 16px;border-radius:16px;background:var(--cream);border:1.5px solid var(--warm);}
+.stat-item strong{display:block;font-family:'Playfair Display',serif;font-size:32px;font-weight:900;color:var(--violet);}
+.stat-item span{font-size:13px;color:var(--text3);font-weight:500;}
+
+/* CONTENT SECTIONS */
+.about-body{padding:72px 52px;max-width:1100px;margin:0 auto;}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:0;}
+
+.info-card{
+    background:var(--white);border-radius:20px;
+    border:1.5px solid rgba(58,33,71,0.09);padding:28px;
+    box-shadow:0 4px 20px var(--shadow);
+}
+.info-card.full{grid-column:span 2;}
+.info-card.accent-top{border-top:4px solid var(--accent);}
+.info-card.violet-top{border-top:4px solid var(--violet);}
+
+.info-card h2{font-family:'Playfair Display',serif;font-size:24px;color:var(--violet);margin-bottom:18px;display:flex;align-items:center;gap:10px;}
+.info-card h2 i{color:var(--accent);font-size:20px;}
+.info-card p{font-size:15px;line-height:1.8;color:var(--text2);}
+
+.edu-item{display:flex;gap:14px;margin-bottom:18px;padding-bottom:18px;border-bottom:1px solid var(--warm);}
+.edu-item:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+.edu-icon{width:44px;height:44px;border-radius:12px;background:var(--cream);border:1.5px solid var(--warm);display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--violet);flex-shrink:0;}
+.edu-text strong{display:block;color:var(--violet);font-weight:700;font-size:15px;margin-bottom:2px;}
+.edu-text span{color:var(--text3);font-size:13px;}
+.edu-text em{display:block;color:var(--text2);font-size:13px;font-style:normal;margin-top:3px;}
+
+.interests-wrap{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px;}
+.interest-tag{padding:8px 16px;border-radius:999px;background:var(--cream);border:1.5px solid var(--warm);color:var(--text2);font-size:13px;font-weight:600;transition:all 0.2s;}
+.interest-tag:hover{background:var(--violet);color:var(--white);border-color:var(--violet);}
+
+.skill-row{display:flex;align-items:center;gap:14px;margin-bottom:14px;}
+.skill-row:last-child{margin-bottom:0;}
+.skill-label{font-size:14px;color:var(--text2);font-weight:600;min-width:160px;}
+.skill-bar{flex:1;height:8px;background:var(--warm);border-radius:999px;overflow:hidden;}
+.skill-bar-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--accent),var(--violet2));}
+
+/* CTA */
+.about-cta{background:var(--violet);padding:72px 52px;text-align:center;}
+.cta-inner{max-width:640px;margin:0 auto;}
+.about-cta h2{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,42px);color:var(--white);margin-bottom:14px;}
+.about-cta p{color:rgba(255,255,255,0.65);font-size:16px;margin-bottom:28px;line-height:1.6;}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.cta-btn-primary{background:var(--accent);color:var(--violet);border:2px solid var(--accent);padding:13px 28px;border-radius:12px;font-size:15px;font-weight:700;transition:all 0.25s;}
+.cta-btn-primary:hover{background:var(--accent2);border-color:var(--accent2);}
+.cta-btn-ghost{background:transparent;color:var(--white);border:2px solid rgba(255,255,255,0.35);padding:13px 28px;border-radius:12px;font-size:15px;font-weight:600;transition:all 0.25s;}
+.cta-btn-ghost:hover{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.6);}
+
+/* FOOTER */
+.page-footer{background:var(--violet);padding:28px 52px;border-top:1px solid rgba(255,255,255,0.1);}
+.footer-copy{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+.footer-copy span{color:rgba(255,255,255,0.4);font-size:12px;}
+.footer-copy a{color:rgba(255,255,255,0.55);font-size:13px;transition:color 0.2s;}
+.footer-copy a:hover{color:var(--accent);}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    .page-nav{padding:0 24px;}
+    .about-hero{padding:52px 24px 40px;}
+    .hero-inner{grid-template-columns:1fr;gap:32px;}
+    .hero-photo{margin:0 auto;}
+    .stats-inner{padding:24px;grid-template-columns:repeat(2,1fr);gap:14px;}
+    .about-body{padding:48px 24px;}
+    .about-grid{grid-template-columns:1fr;}
+    .info-card.full{grid-column:span 1;}
+    .skill-label{min-width:120px;}
+    .about-cta{padding:52px 24px;}
+    .page-footer{padding:24px;}
+}
+@media(max-width:600px){
+    .page-nav{padding:0 16px;height:60px;}
+    .nav-logo{font-size:18px;}
+    .nav-back{padding:7px 14px;font-size:13px;}
+    .about-hero{padding:36px 16px 32px;}
+    .hero-text h1{font-size:clamp(28px,9vw,42px);}
+    .hero-text .subtitle{font-size:16px;}
+    .stats-inner{padding:18px 16px;grid-template-columns:repeat(2,1fr);gap:10px;}
+    .stat-item strong{font-size:26px;}
+    .about-body{padding:36px 16px;}
+    .about-grid{gap:16px;}
+    .info-card{padding:20px 16px;}
+    .info-card h2{font-size:20px;}
+    .edu-item{gap:10px;}
+    .skill-label{min-width:100px;font-size:13px;}
+    .about-cta{padding:40px 16px;}
+    .cta-btns{flex-direction:column;align-items:center;}
+    .cta-btn-primary,.cta-btn-ghost{width:100%;text-align:center;}
+    .page-footer{padding:20px 16px;}
+    .footer-copy{flex-direction:column;text-align:center;}
+}
+</style>
 </head>
 <body>
-    <main class="card">
-        <h1>Coming Soon</h1>
-        <p>This page is in development process.</p>
-        <a href="index.html">Back to Portfolio</a>
-    </main>
+
+<!-- NAV -->
+<nav class="page-nav">
+    <div class="nav-logo">Portfolio</div>
+    <a href="index.html" class="nav-back"><i class="fa-solid fa-arrow-left"></i> Back to Portfolio</a>
+</nav>
+
+<!-- HERO -->
+<section class="about-hero">
+    <div class="hero-inner">
+        <div class="hero-text">
+            <p class="section-label">About Me</p>
+            <h1>I design experiences,<br>not just interfaces.</h1>
+            <p class="subtitle">UI/UX Designer &amp; Frontend Developer</p>
+            <p>I'm Patel Ved Alpeshkumar — a passionate designer and developer from Gujarat, India. I enjoy building digital products that feel intuitive and purposeful, turning complex problems into clean, accessible solutions. I believe that great design is invisible — users simply feel at home.</p>
+        </div>
+        <div class="hero-photo">
+            <div class="hero-photo-frame"><img src="my pic.jpeg" alt="Patel Ved"></div>
+        </div>
+    </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-row">
+    <div class="stats-inner">
+        <div class="stat-item"><strong>15+</strong><span>Projects Completed</span></div>
+        <div class="stat-item"><strong>2+</strong><span>Years of Experience</span></div>
+        <div class="stat-item"><strong>10+</strong><span>Skills Mastered</span></div>
+        <div class="stat-item"><strong>2</strong><span>Startups in Development</span></div>
+    </div>
+</div>
+
+<!-- BODY -->
+<div class="about-body">
+    <div class="about-grid">
+
+        <!-- Bio -->
+        <div class="info-card full accent-top">
+            <h2><i class="fa-solid fa-user"></i> Biography</h2>
+            <p>I'm a UI/UX Designer and Frontend Developer focused on creating meaningful, user-centered digital experiences. My journey started with a curiosity about how design can influence behaviour and decision-making — and that curiosity has driven everything since. I work across research, wireframing, prototyping, and frontend code to bring ideas from concept to working product. I'm currently building two startup concepts — Trinetra and TravelX — while continuously expanding my skills in Flutter and TypeScript.</p>
+        </div>
+
+        <!-- Education -->
+        <div class="info-card violet-top">
+            <h2><i class="fa-solid fa-graduation-cap"></i> Education</h2>
+            <div class="edu-item">
+                <div class="edu-icon"><i class="fa-solid fa-school"></i></div>
+                <div class="edu-text">
+                    <strong>B.Tech / Diploma in IT / CS</strong>
+                    <span>Gujarat, India</span>
+                    <em>Currently Pursuing</em>
+                </div>
+            </div>
+            <div class="edu-item">
+                <div class="edu-icon"><i class="fa-solid fa-pen-nib"></i></div>
+                <div class="edu-text">
+                    <strong>UI/UX Design — Self-Taught</strong>
+                    <span>Figma, UX principles, Design Systems</span>
+                    <em>Ongoing learning</em>
+                </div>
+            </div>
+            <div class="edu-item">
+                <div class="edu-icon"><i class="fa-solid fa-code"></i></div>
+                <div class="edu-text">
+                    <strong>Frontend Development</strong>
+                    <span>HTML, CSS, JavaScript, Flutter</span>
+                    <em>Projects &amp; self-study</em>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills bars -->
+        <div class="info-card accent-top">
+            <h2><i class="fa-solid fa-chart-bar"></i> Skill Level</h2>
+            <div class="skill-row"><span class="skill-label">UI/UX Design</span><div class="skill-bar"><div class="skill-bar-fill" style="width:90%"></div></div></div>
+            <div class="skill-row"><span class="skill-label">Figma</span><div class="skill-bar"><div class="skill-bar-fill" style="width:88%"></div></div></div>
+            <div class="skill-row"><span class="skill-label">HTML / CSS</span><div class="skill-bar"><div class="skill-bar-fill" style="width:85%"></div></div></div>
+            <div class="skill-row"><span class="skill-label">JavaScript</span><div class="skill-bar"><div class="skill-bar-fill" style="width:70%"></div></div></div>
+            <div class="skill-row"><span class="skill-label">Flutter</span><div class="skill-bar"><div class="skill-bar-fill" style="width:65%"></div></div></div>
+            <div class="skill-row"><span class="skill-label">Graphic Design</span><div class="skill-bar"><div class="skill-bar-fill" style="width:75%"></div></div></div>
+        </div>
+
+        <!-- Interests -->
+        <div class="info-card full">
+            <h2><i class="fa-solid fa-heart"></i> Interests &amp; Values</h2>
+            <div class="interests-wrap">
+                <span class="interest-tag">User Research</span>
+                <span class="interest-tag">Design Systems</span>
+                <span class="interest-tag">Typography</span>
+                <span class="interest-tag">Startups</span>
+                <span class="interest-tag">Problem Solving</span>
+                <span class="interest-tag">Accessibility</span>
+                <span class="interest-tag">Product Thinking</span>
+                <span class="interest-tag">Minimal Design</span>
+                <span class="interest-tag">Technology</span>
+                <span class="interest-tag">Team Leadership</span>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- CTA -->
+<section class="about-cta">
+    <div class="cta-inner">
+        <h2>Let's build something great together.</h2>
+        <p>Open to internships, freelance projects, and meaningful design collaborations.</p>
+        <div class="cta-btns">
+            <a href="hire-me.html" class="cta-btn-primary">Hire Me ✦</a>
+            <a href="index.html#connect" class="cta-btn-ghost">Get In Touch</a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="page-footer">
+    <div class="footer-copy">
+        <span>© 2026 Patel Ved. All rights reserved.</span>
+        <a href="index.html">← Back to Portfolio</a>
+    </div>
+</footer>
+
 </body>
 </html>
