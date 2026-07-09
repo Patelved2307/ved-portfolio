@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All Projects — Patel Ved</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600;700&display=swap');
+:root{--cream:#FAF7F2;--cream2:#F2EDE4;--warm:#EDE5D8;--violet:#3A2147;--violet2:#5C3370;--accent:#D4A853;--accent2:#E8C47A;--text:#1A1020;--text2:#4A3555;--text3:#7A6585;--white:#FFFFFF;--shadow:rgba(58,33,71,0.10);--shadow2:rgba(58,33,71,0.20);}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html,body{overflow-x:hidden;width:100%;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);}
+a{text-decoration:none;}
+img{max-width:100%;display:block;}
+button{font-family:inherit;}
+
+.page-nav{position:sticky;top:0;z-index:100;background:rgba(250,247,242,0.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(58,33,71,0.09);display:flex;justify-content:space-between;align-items:center;padding:0 52px;height:66px;box-shadow:0 2px 16px var(--shadow);}
+.nav-logo{font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:var(--violet);}
+.nav-logo::after{content:'.';color:var(--accent);}
+.nav-back{display:inline-flex;align-items:center;gap:8px;background:var(--violet);color:var(--white);border:2px solid var(--violet);border-radius:10px;padding:9px 18px;font-size:14px;font-weight:600;transition:all 0.25s;}
+.nav-back:hover{background:var(--violet2);border-color:var(--violet2);}
+
+.projects-hero{
+    padding:80px 52px 56px;
+    background:radial-gradient(ellipse 55% 50% at 85% 40%, rgba(212,168,83,0.13) 0%, transparent 65%), var(--cream);
+    position:relative;overflow:hidden;
+}
+.projects-hero::before{content:'WORK';position:absolute;top:16px;left:-10px;font-family:'Playfair Display',serif;font-size:150px;font-weight:900;color:rgba(58,33,71,0.04);pointer-events:none;user-select:none;}
+.hero-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1;}
+
+.section-label{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);margin-bottom:14px;}
+.section-label::before{content:'';width:28px;height:2px;background:var(--accent);display:block;}
+
+.projects-hero h1{font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,60px);font-weight:900;color:var(--violet);line-height:1.1;margin-bottom:14px;}
+.projects-hero p{font-size:17px;color:var(--text2);line-height:1.7;max-width:600px;}
+
+/* FILTERS */
+.filter-bar{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px;position:relative;z-index:1;}
+.filter-btn{background:var(--white);border:1.5px solid var(--warm);color:var(--text2);padding:8px 16px;border-radius:999px;font-size:13px;font-weight:600;cursor:pointer;transition:all 0.2s;}
+.filter-btn:hover{border-color:var(--accent);color:var(--violet);}
+.filter-btn.active{background:var(--violet);border-color:var(--violet);color:var(--white);}
+
+/* GRID */
+.projects-body{padding:56px 52px 80px;max-width:1200px;margin:0 auto;}
+
+.project-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;margin-bottom:40px;}
+
+.project-card{
+    background:var(--white);border-radius:20px;
+    border:1.5px solid rgba(58,33,71,0.08);
+    overflow:hidden;
+    box-shadow:0 4px 20px var(--shadow);
+    transition:transform 0.3s ease, box-shadow 0.3s ease;
+    position:relative;
+    cursor:pointer;
+    display:flex; flex-direction:column;
+    opacity:0; transform:translateY(18px);
+    animation:cardIn .6s cubic-bezier(.25,.46,.45,.94) forwards;
+}
+@keyframes cardIn{to{opacity:1;transform:translateY(0);}}
+.project-card:hover{transform:translateY(-6px);box-shadow:0 20px 48px var(--shadow2);}
+.project-card:focus-visible{outline:3px solid var(--accent);outline-offset:2px;}
+.project-card-bar{height:4px;background:linear-gradient(90deg,var(--accent),var(--violet2));}
+.project-card-body{padding:24px;display:flex;flex-direction:column;flex:1;}
+
+/* Media (real photo or illustrated hero-art) */
+.project-card-img{width:100%;height:190px;object-fit:cover;border-radius:14px;margin-bottom:16px;border:1.5px solid var(--warm);}
+.hero-art{
+    width:100%;height:190px;border-radius:14px;margin-bottom:16px;border:1.5px solid var(--warm);
+    position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;
+}
+.hero-art-icon{font-size:52px;position:relative;z-index:2;filter:drop-shadow(0 6px 14px rgba(58,33,71,0.18));}
+.hero-art-shape{position:absolute;border-radius:50%;}
+.hero-art-shape-1{width:130px;height:130px;top:-40px;right:-30px;}
+.hero-art-shape-2{width:90px;height:90px;bottom:-30px;left:-20px;}
+.hero-art-shape-3{width:70px;height:70px;top:20px;left:22px;border:2px solid;border-radius:50%;background:transparent!important;}
+.project-card:hover .hero-art-icon{transform:scale(1.08) rotate(-4deg);}
+.hero-art-icon{transition:transform .4s ease;}
+
+.project-card-tag{display:inline-block;padding:4px 12px;border-radius:999px;background:var(--cream);border:1.5px solid var(--warm);color:var(--text3);font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;}
+.project-card-status{display:inline-block;padding:4px 12px;border-radius:999px;background:rgba(212,168,83,0.15);border:1.5px solid rgba(212,168,83,0.4);color:#8a6a1f;font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;margin-left:6px;}
+.project-card h2{font-family:'Playfair Display',serif;font-size:22px;color:var(--violet);margin-bottom:10px;line-height:1.2;}
+.project-card p{font-size:14px;line-height:1.7;color:var(--text2);flex:1;}
+.project-card-cue{margin-top:16px;display:inline-flex;align-items:center;gap:6px;color:var(--violet2);font-size:13px;font-weight:700;}
+.project-card:hover .project-card-cue{color:var(--accent2);}
+.project-card:hover .project-card-cue i{transform:translateX(3px);}
+.project-card-cue i{transition:transform .25s ease;}
+
+/* CTA card */
+.coming-soon-card{
+    background:linear-gradient(135deg,var(--violet) 0%,var(--violet2) 100%);
+    border-radius:20px;padding:40px;text-align:center;
+    box-shadow:0 12px 36px var(--shadow2);
+    grid-column:span 2;
+    position:relative;overflow:hidden;
+}
+.coming-soon-card::before{
+    content:'✦';
+    position:absolute;top:-20px;right:24px;
+    font-size:120px;color:rgba(255,255,255,0.04);
+    pointer-events:none;
+}
+.coming-soon-card h2{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,40px);color:var(--white);margin-bottom:12px;}
+.coming-soon-card p{color:rgba(255,255,255,0.65);font-size:16px;margin-bottom:28px;line-height:1.65;max-width:540px;margin-left:auto;margin-right:auto;}
+.coming-soon-badge{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:var(--violet);padding:8px 20px;border-radius:999px;font-size:13px;font-weight:800;margin-bottom:24px;}
+
+.cs-links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.cs-btn{background:rgba(255,255,255,0.15);color:var(--white);border:1.5px solid rgba(255,255,255,0.3);padding:11px 22px;border-radius:10px;font-size:14px;font-weight:600;transition:all 0.25s;}
+.cs-btn:hover{background:rgba(255,255,255,0.25);}
+.cs-btn.gold{background:var(--accent);color:var(--violet);border-color:var(--accent);}
+.cs-btn.gold:hover{background:var(--accent2);border-color:var(--accent2);}
+
+.page-footer{background:var(--violet);padding:28px 52px;}
+.footer-copy{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+.footer-copy span{color:rgba(255,255,255,0.4);font-size:12px;}
+.footer-copy a{color:rgba(255,255,255,0.55);font-size:13px;transition:color 0.2s;}
+.footer-copy a:hover{color:var(--accent);}
+
+@media(max-width:900px){
+    .page-nav,.projects-hero,.projects-body,.page-footer{padding-left:24px;padding-right:24px;}
+    .project-cards{grid-template-columns:1fr;}
+    .coming-soon-card{grid-column:span 1;}
+}
+@media(max-width:600px){
+    .page-nav{padding:0 16px;height:60px;}
+    .projects-hero{padding:40px 16px 36px;}
+    .projects-hero h1{font-size:clamp(28px,9vw,40px);}
+    .projects-body{padding:36px 16px 56px;}
+    .project-card-img,.hero-art{height:150px;}
+    .hero-art-icon{font-size:40px;}
+    .coming-soon-card{padding:28px 18px;}
+    .cs-links{flex-direction:column;align-items:center;}
+    .cs-btn{width:100%;text-align:center;}
+    .page-footer{padding:20px 16px;}
+    .footer-copy{flex-direction:column;text-align:center;}
+}
+</style>
+</head>
+<body>
+
+<nav class="page-nav">
+    <div class="nav-logo">Portfolio</div>
+    <a href="index.html" class="nav-back"><i class="fa-solid fa-arrow-left"></i> Back to Portfolio</a>
+</nav>
+
+<section class="projects-hero">
+    <div class="hero-inner">
+        <p class="section-label">My Work</p>
+        <h1>All Projects</h1>
+        <p>Every case study, UI/UX design, and hackathon build — click any card to open the full case study.</p>
+        <div class="filter-bar" id="filter-bar"></div>
+    </div>
+</section>
+
+<div class="projects-body">
+    <div class="project-cards" id="project-cards"></div>
+</div>
+
+<footer class="page-footer">
+    <div class="footer-copy">
+        <span>© 2026 Patel Ved. All rights reserved.</span>
+        <a href="index.html">← Back to Portfolio</a>
+    </div>
+</footer>
+
+<script src="projects-data.js"></script>
+<script>
+const cardsEl = document.getElementById('project-cards');
+const filterBar = document.getElementById('filter-bar');
+let activeCategory = "All";
+
+function renderFilters() {
+    filterBar.innerHTML = CATEGORIES.map(c =>
+        `<button class="filter-btn${c === activeCategory ? ' active' : ''}" data-cat="${c}">${c}</button>`
+    ).join('');
+    filterBar.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            activeCategory = btn.dataset.cat;
+            renderFilters();
+            renderCards();
+        });
+    });
+}
+
+function goToProject(id) {
+    window.location.href = `project-detail.html?id=${id}`;
+}
+
+function renderCards() {
+    const list = activeCategory === "All" ? PROJECTS : PROJECTS.filter(p => p.category === activeCategory);
+
+    cardsEl.innerHTML = list.map((p, i) => `
+        <div class="project-card" style="animation-delay:${Math.min(i, 6) * 0.06}s" tabindex="0" role="button" aria-label="Open ${p.title} case study" data-id="${p.id}">
+            <div class="project-card-bar"></div>
+            <div class="project-card-body">
+                ${projectHeroArt(p, 'project-card-img')}
+                <span class="project-card-tag">${p.tag}</span><span class="project-card-status">${p.status}</span>
+                <h2>${p.title}</h2>
+                <p>${p.summary}</p>
+                <span class="project-card-cue">Open Case Study <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+        </div>
+    `).join('') + `
+        <div class="coming-soon-card">
+            <div class="coming-soon-badge">✦ Have a project in mind?</div>
+            <h2>Let's Build Something Together</h2>
+            <p>I'm always open to new UI/UX and frontend collaborations — internships, freelance projects, or hackathon teams.</p>
+            <div class="cs-links">
+                <a href="hire-me.html" class="cs-btn gold">Collaborate with Me ✦</a>
+                <a href="index.html#connect" class="cs-btn">Get In Touch</a>
+                <a href="index.html" class="cs-btn">Back to Home</a>
+            </div>
+        </div>
+    `;
+
+    cardsEl.querySelectorAll('.project-card').forEach(card => {
+        card.addEventListener('click', () => goToProject(card.dataset.id));
+        card.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); goToProject(card.dataset.id); }
+        });
+    });
+}
+
+renderFilters();
+renderCards();
+</script>
+
+</body>
+</html>

@@ -15,33 +15,6 @@
     <div class="cursor-dot"  id="cursor-dot"></div>
 </div>
 
-<!-- Startup Ad -->
-<div class="startup-ad" id="startup-ad">
-    <div class="startup-ad-box">
-        <button class="startup-ad-close" id="startup-ad-close" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
-        <p class="startup-ad-tag">Future Ventures</p>
-        <h3>Launching Soon: Trinetra &amp; TravelX</h3>
-        <p class="startup-ad-subtext">Two startups currently in active development phase.</p>
-        <div class="startup-ad-grid">
-            <a href="startup-trinetra.html" class="startup-ad-card">
-                <img src="Trinetra.jpg" alt="Trinetra">
-                <div><h4>Trinetra</h4><p>Misinformation detection platform focused on clarity and trust.</p></div>
-            </a>
-            <a href="startup-travelx.html" class="startup-ad-card">
-                <img src="logo 2.png" alt="TravelX">
-                <div><h4>TravelX</h4><p>Smart travel planning and booking experience for modern users.</p></div>
-            </a>
-        </div>
-        <p class="startup-ad-timer">Closes in <span id="startup-ad-seconds">5</span>s</p>
-    </div>
-</div>
-
-<!-- Startup Mini -->
-<div class="startup-mini" id="startup-mini">
-    <a href="startup-trinetra.html" class="startup-mini-item"><img src="Trinetra.jpg" alt="Trinetra"></a>
-    <a href="startup-travelx.html" class="startup-mini-item"><img src="logo 2.png" alt="TravelX"></a>
-</div>
-
 <!-- Header -->
 <div class="main">
     <header id="header">
@@ -54,6 +27,7 @@
             <a href="#about">About</a>
             <a href="#project">Project</a>
             <a href="#skills">Skills</a>
+            <a href="#events">Events</a>
             <a href="#connect">Connect</a>
         </nav>
     </header>
@@ -62,6 +36,7 @@
 <!-- HOME -->
 <section id="home">
     <div class="home-bg-text">VED</div>
+    <div class="particle-field" id="particle-field"></div>
     <div class="content">
         <div class="text">
             <div class="home-eyebrow">UI/UX Designer &amp; Developer</div>
@@ -85,13 +60,25 @@
             </div>
         </div>
         <div class="image">
-            <div class="image-frame">
+            <div class="image-frame" id="tilt-frame">
                 <img src="my pic.jpeg" alt="Patel Ved">
             </div>
             <div class="image-stats">
-                <div class="image-stats-num">1+</div>
+                <div class="image-stats-num" data-count="1" data-suffix="+">0</div>
                 <div class="image-stats-label">Years Design</div>
             </div>
+        </div>
+    </div>
+    <div class="marquee">
+        <div class="marquee-track">
+            <span>UI/UX Design</span><span>•</span><span>Frontend Development</span><span>•</span>
+            <span>Figma</span><span>•</span><span>Flutter</span><span>•</span>
+            <span>Wireframing</span><span>•</span><span>Design Systems</span><span>•</span>
+            <span>HTML / CSS / JS</span><span>•</span><span>Team Leadership</span><span>•</span>
+            <span>UI/UX Design</span><span>•</span><span>Frontend Development</span><span>•</span>
+            <span>Figma</span><span>•</span><span>Flutter</span><span>•</span>
+            <span>Wireframing</span><span>•</span><span>Design Systems</span><span>•</span>
+            <span>HTML / CSS / JS</span><span>•</span><span>Team Leadership</span><span>•</span>
         </div>
     </div>
 </section>
@@ -111,9 +98,9 @@
             <p class="reveal reveal-delay-2">I'm a passionate UI/UX Designer who enjoys creating intuitive and user-centered digital experiences that solve real-world problems. I focus on understanding user needs, behaviors, and challenges before translating ideas into thoughtful design solutions.</p>
             <p class="reveal reveal-delay-2">My design process includes user research, wireframing, prototyping, and visual design — ensuring clarity, usability, and consistency throughout every experience. Good design goes beyond aesthetics; it creates meaningful, accessible interactions.</p>
             <div class="about-stats reveal reveal-delay-3">
-                <div class="about-stat"><div class="about-stat-num">4+</div><div class="about-stat-label">Projects</div></div>
-                <div class="about-stat"><div class="about-stat-num">1+</div><div class="about-stat-label">Years Exp</div></div>
-                <div class="about-stat"><div class="about-stat-num">12+</div><div class="about-stat-label">Skills</div></div>
+                <div class="about-stat"><div class="about-stat-num" data-count="11" data-suffix="+">0</div><div class="about-stat-label">Projects</div></div>
+                <div class="about-stat"><div class="about-stat-num" data-count="1" data-suffix="+">0</div><div class="about-stat-label">Years Exp</div></div>
+                <div class="about-stat"><div class="about-stat-num" data-count="12" data-suffix="+">0</div><div class="about-stat-label">Skills</div></div>
             </div>
             <div class="about-actions reveal reveal-delay-4">
                 <a href="#connect" class="btn-gold">Let's Connect <i class="fa-solid fa-arrow-right"></i></a>
@@ -157,12 +144,20 @@
                     <p>Developed a misinformation detection app with clear visual cues, educational resources, and real-time fact-checking features to help users identify false content.</p>
                 </div>
             </article>
-            <article class="project-card project-card-cta reveal reveal-delay-3">
+            <article class="project-card reveal reveal-delay-3">
+                <div class="project-card-img project-card-img-icon"><i class="fa-solid fa-satellite"></i></div>
+                <div class="project-card-body">
+                    <span class="project-tag">ISRO BAH 2026</span>
+                    <h3>Vikranth — Urban Heat Island Mitigation</h3>
+                    <p>Built for the ISRO Bharatiya Antariksh Hackathon 2026 — a machine learning pipeline analysing satellite data to map and mitigate urban heat islands across Ahmedabad.</p>
+                </div>
+            </article>
+            <article class="project-card project-card-cta reveal reveal-delay-4">
                 <div class="project-card-body">
                     <span class="project-tag">All Projects</span>
                     <h3>Explore More Case Studies</h3>
                     <p>Discover additional UI/UX and web design projects with complete process documentation, wireframes, and polished final interfaces.</p>
-                    <a href="projects-coming-soon.html" class="project-view-btn">View All Projects <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="all-projects.html" class="project-view-btn">View All Projects <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </article>
         </div>
@@ -207,6 +202,102 @@
     </div>
 </section>
 
+<!-- EVENTS & ACHIEVEMENTS -->
+<section id="events">
+    <div class="events-container">
+        <div class="section-label reveal">Track Record</div>
+        <h2 class="section-title reveal reveal-delay-1">Events &amp; <em>Achievements</em></h2>
+        <p class="events-intro reveal reveal-delay-2">Hackathons, makeathons, and clubs I actively take part in — and what came out of them.</p>
+
+        <div class="events-grid">
+            <div class="events-timeline reveal reveal-delay-2">
+                <h3>Hackathons &amp; Events</h3>
+                <ol class="timeline">
+                    <li class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-body">
+                            <span class="timeline-tag">ISRO BAH 2026</span>
+                            <h4>ISRO Bharatiya Antariksh Hackathon</h4>
+                            <p>Team Vikranth — built an ML pipeline for Urban Heat Island Mitigation (PS1) across Ahmedabad, from Google Earth Engine data export through to an explainable, interactive heat-map submission.</p>
+                        </div>
+                    </li>
+                    <li class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-body">
+                            <span class="timeline-tag">College Hackathon</span>
+                            <h4>Impacthon@KSV 2025–2026</h4>
+                            <p>Team GreenSync — Track 03: Technology for Social Good. Built Vrudhseva, an elder-care platform designed around passive IoT monitoring.</p>
+                        </div>
+                    </li>
+                    <li class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-body">
+                            <span class="timeline-tag">Hackathon</span>
+                            <h4>Odoo Hackathon</h4>
+                            <p>Reached the finals twice, building product and workflow-focused solutions under tight time constraints.</p>
+                        </div>
+                    </li>
+                    <li class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-body">
+                            <span class="timeline-tag">Makeathon</span>
+                            <h4>Figma Makeathon — Pizza Hunt</h4>
+                            <p>Designed a full pizza-ordering UI, from build-your-own customization to checkout, within a live design sprint.</p>
+                        </div>
+                    </li>
+                    <li class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-body">
+                            <span class="timeline-tag">Research Club</span>
+                            <h4>Co-Coordinator, VSITR Research Club</h4>
+                            <p>Co-coordinate outreach and orientation drives, planning inter-club collaboration events and guidance sessions for fellow students.</p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="achievements-col reveal reveal-delay-3">
+                <h3>Achievements</h3>
+                <div class="achievement-card">
+                    <div class="achievement-icon"><i class="fa-solid fa-trophy"></i></div>
+                    <div>
+                        <h4>3rd Runner-Up</h4>
+                        <p>Impacthon@KSV 2025–2026 — Track 03: Technology for Social Good</p>
+                    </div>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon"><i class="fa-solid fa-medal"></i></div>
+                    <div>
+                        <h4>2× Finalist</h4>
+                        <p>Odoo Hackathon</p>
+                    </div>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon"><i class="fa-solid fa-satellite"></i></div>
+                    <div>
+                        <h4>Certificate of Participation</h4>
+                        <p>ISRO Bharatiya Antariksh Hackathon 2026</p>
+                    </div>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon"><i class="fa-solid fa-certificate"></i></div>
+                    <div>
+                        <h4>Internship Completion</h4>
+                        <p>UI/UX Design Intern — Unified Mentor Private Limited</p>
+                    </div>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon"><i class="fa-solid fa-award"></i></div>
+                    <div>
+                        <h4>Multiple Certificates</h4>
+                        <p>College events, competitions, and orientation drives</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- CONNECT -->
 <section id="connect">
     <div class="connect-bg-text">CONNECT</div>
@@ -215,12 +306,13 @@
             <div class="section-label reveal">Get In Touch</div>
             <h2 class="reveal reveal-delay-1">Let's build something <em>great</em></h2>
             <p class="connect-subtitle reveal reveal-delay-2">I'm open to internships, freelance projects, and design collaborations. Feel free to reach out if you'd like to discuss ideas or opportunities.</p>
-            <form class="connect-form reveal reveal-delay-3">
-                <input type="text" placeholder="Your Full Name">
-                <textarea rows="4" placeholder="Your Message"></textarea>
-                <button type="button">Send Message <i class="fa-solid fa-paper-plane"></i></button>
+            <form class="connect-form reveal reveal-delay-3" id="connect-form">
+                <input type="text" name="from_name" id="connect-name" placeholder="Your Full Name" required>
+                <input type="email" name="reply_to" id="connect-email" placeholder="Your Email" required>
+                <textarea rows="4" name="message" id="connect-message" placeholder="Your Message" required></textarea>
+                <button type="submit" id="connect-submit-btn">Send Message <i class="fa-solid fa-paper-plane"></i></button>
             </form>
-            <p class="connect-note">Form submission coming soon — use the links below for instant contact.</p>
+            <p class="connect-note" id="connect-form-status">Messages are sent straight to my inbox — I usually reply within a day.</p>
             <div class="connect-social reveal reveal-delay-4">
                 <a href="https://www.linkedin.com/in/patel-ved-327a55326/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                 <a href="https://wa.me/919979809442" target="_blank"><i class="fab fa-whatsapp"></i></a>
@@ -230,9 +322,9 @@
             </div>
         </div>
         <div class="connect-right reveal reveal-delay-2">
-            <a href="mailto:patelved2307@gmail.com" class="connect-card">
+            <a href="mailto:paved2307@gmail.com" class="connect-card">
                 <div class="connect-card-icon"><i class="fa-solid fa-envelope"></i></div>
-                <div><div class="connect-card-label">Email</div><div class="connect-card-value">patelved2307@gmail.com</div></div>
+                <div><div class="connect-card-label">Email</div><div class="connect-card-value">paved2307@gmail.com</div></div>
             </a>
             <a href="https://www.linkedin.com/in/patel-ved-327a55326/" target="_blank" class="connect-card">
                 <div class="connect-card-icon"><i class="fab fa-linkedin-in"></i></div>
@@ -274,6 +366,8 @@
     <p class="footer-copy">&copy; 2026 Patel Ved. All rights reserved.</p>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="site-forms.js"></script>
 <script src="portfolio.js"></script>
 <script>
 // Custom Cursor
@@ -310,9 +404,61 @@ mainNav.querySelectorAll('a').forEach(a=>{a.addEventListener('click',()=>{mainNa
 const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 
-// Connect send
-const sendBtn=document.querySelector('#connect .connect-form button');
-if(sendBtn)sendBtn.addEventListener('click',()=>alert('Coming Soon! Please connect via the social links or contact cards.'));
+// Floating particle field
+const particleField=document.getElementById('particle-field');
+if(particleField){
+    const count=window.innerWidth<600?12:26;
+    for(let i=0;i<count;i++){
+        const p=document.createElement('div');
+        p.className='particle';
+        const size=Math.random()*3+1.5;
+        p.style.width=size+'px';
+        p.style.height=size+'px';
+        p.style.left=Math.random()*100+'%';
+        p.style.bottom='-20px';
+        p.style.setProperty('--drift',(Math.random()*80-40)+'px');
+        p.style.animationDuration=(Math.random()*14+14)+'s';
+        p.style.animationDelay=(Math.random()*14)+'s';
+        particleField.appendChild(p);
+    }
+}
+
+// Count-up stat numbers
+const countEls=document.querySelectorAll('[data-count]');
+const countObserver=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+        if(!entry.isIntersecting)return;
+        const el=entry.target;
+        const target=parseInt(el.dataset.count,10);
+        const suffix=el.dataset.suffix||'';
+        const duration=1000;
+        const start=performance.now();
+        function tick(now){
+            const progress=Math.min((now-start)/duration,1);
+            const eased=1-Math.pow(1-progress,3);
+            el.textContent=Math.round(eased*target)+suffix;
+            if(progress<1)requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+        countObserver.unobserve(el);
+    });
+},{threshold:.4});
+countEls.forEach(el=>countObserver.observe(el));
+
+// Profile image tilt
+const tiltFrame=document.getElementById('tilt-frame');
+if(tiltFrame){
+    tiltFrame.addEventListener('mousemove',e=>{
+        const rect=tiltFrame.getBoundingClientRect();
+        const x=(e.clientX-rect.left)/rect.width-0.5;
+        const y=(e.clientY-rect.top)/rect.height-0.5;
+        tiltFrame.style.transform=`perspective(800px) rotateY(${x*10}deg) rotateX(${-y*10}deg) scale(1.02)`;
+    });
+    tiltFrame.addEventListener('mouseleave',()=>{
+        tiltFrame.style.transform='perspective(800px) rotateY(0) rotateX(0) scale(1)';
+    });
+}
+
 </script>
 </body>
 </html>

@@ -1,0 +1,235 @@
+/* ============================================================
+   PATEL VED — Shared project dataset
+   Used by all-projects.html and project-detail.html
+   ============================================================ */
+
+const PROJECTS = [
+  {
+    id: "vikranth",
+    title: "Vikranth — Urban Heat Island Mitigation",
+    category: "Hackathon",
+    status: "ISRO BAH 2026",
+    tag: "ML Pipeline · Geospatial",
+    icon: "fa-solid fa-satellite",
+    accent: ["#D4A853", "#3A2147"],
+    image: null,
+    summary: "A machine-learning pipeline built for the ISRO Bharatiya Antariksh Hackathon 2026 to map and mitigate urban heat islands across Ahmedabad.",
+    overview: "Vikranth (originally called GreenSync) was built for the ISRO Bharatiya Antariksh Hackathon 2026, targeting Problem Statement 1: Urban Heat Mitigation. Ahmedabad, like most fast-growing Indian cities, has pockets that run measurably hotter than their surroundings because of concrete density, low vegetation cover, and poor surface reflectivity. The project set out to identify exactly where those pockets are and quantify what's driving them, using satellite-derived data instead of relying only on ground sensors.",
+    problem: "Urban planners rarely have a clear, block-by-block picture of where heat is concentrating and why. Existing heat-mapping efforts are often coarse, infrequent, or disconnected from the land-cover and vegetation data that actually explains the pattern — making it hard to prioritise where interventions like tree cover or reflective roofing would help most.",
+    approach: "I led the ML pipeline and team coordination. We exported land surface temperature, vegetation index (NDVI), and land-cover classification data for Ahmedabad through Google Earth Engine and Dynamic World, then assembled a ~49,700-row training dataset. A Random Forest model was trained to predict heat-island severity from these features, reaching roughly 99.98% validation accuracy — high enough that we added a physics-informed sanity check (a simplified surface energy balance) so the model's outputs stay grounded in real thermodynamics, not just pattern-matching. SHAP was layered on top for explainability, so the output isn't just a heat score — it also shows which factors (vegetation loss, built-up density, etc.) are driving the heat in a given area. The full Python codebase covers data loading, training, prediction, and evaluation as separate modules, and the results feed into an interactive HTML visualization built specifically to make area-level UHI patterns legible to a non-technical reviewer.",
+    outcome: "The result is a reproducible pipeline — from raw satellite export to an explainable, area-level heat map — packaged with a 10-slide submission deck for the ISRO BAH 2026 evaluation. It earned the team a Certificate of Participation. Team: Ved (ML pipeline & coordination), with teammates covering visualization/use case, CNN modelling, XGBoost/SHAP, and deck architecture.",
+    role: "Team Lead — ML Pipeline & Coordination",
+    tools: "Python, Random Forest, Google Earth Engine, Dynamic World, SHAP",
+    type: "Hackathon · ISRO BAH 2026",
+    actions: []
+  },
+  {
+    id: "cft",
+    title: "Carbon Footprint Tracker",
+    category: "Hackathon",
+    status: "Active R&D",
+    tag: "AI-assisted UI · Hardware",
+    icon: "fa-solid fa-leaf",
+    accent: ["#7FB69E", "#3A2147"],
+    image: null,
+    summary: "A hackathon project pairing an AI-assisted UI with real air-quality sensor hardware to track carbon footprint.",
+    overview: "The Carbon Footprint Tracker (CFT) pairs a clean, AI-assisted interface with actual gas-sensing hardware to estimate real-world emissions rather than relying on self-reported activity logs. It's one half of a two-project mission — alongside Vrudhseva — aimed at building deployable, socially useful hardware+software systems rather than pure concept work.",
+    problem: "Most carbon footprint apps ask users to manually log activities, which is tedious and inaccurate. The goal was to sense actual air-quality signals directly and turn raw, noisy sensor data into a number and interface people can trust and act on.",
+    approach: "On the interface side, I designed the AI-assisted UI: a dashboard that translates raw sensor readings into a clear footprint estimate, trends over time, and plain-language explanations. On the hardware side, this has involved real experimental work — verifying MQ135 gas sensors across four test units, diagnosing and fixing ADC saturation on the ESP32 Dev Kit by correcting the load-resistor value in the voltage divider, and following a structured 7-phase calibration plan: baseline checklist, pre-modification mapping, preheat/Ro calibration, a comparative study across three load-resistor values, BME280 temperature/humidity compensation, a Zeolite 13X filtration stage, and finally an ML correction layer to clean up the sensor's raw output. The calibration approach is grounded in published air-quality-sensing research (notably Bhosale et al., which reported R²=0.9924 using a 22kΩ load resistor with BME280 compensation).",
+    outcome: "This is very much active, iterative R&D rather than a finished product — the value so far is a working, validated sensor-calibration pipeline and a UI designed to sit on top of it once the hardware is stable. It's a hackathon project with a genuine hardware research component behind the interface.",
+    role: "UI/UX Design (AI-assisted) & Hardware Calibration R&D",
+    tools: "Figma, ESP32, MQ135, BME280, Python",
+    type: "Hackathon · Active Development",
+    actions: []
+  },
+  {
+    id: "vrudhseva",
+    title: "Vrudhseva — Elder Care Health App",
+    category: "Hackathon",
+    status: "Ongoing",
+    tag: "UI/UX Design · Mobile App",
+    icon: "fa-solid fa-heart-pulse",
+    accent: ["#D4A853", "#5C3370"],
+    image: "Logo (2).png",
+    summary: "A user-friendly health monitoring app for elder care with intuitive navigation, real-time health tracking, and emergency alerts.",
+    overview: "Vrudhseva is an elder-care platform built around a hard design constraint: many of its users — elderly people, often living alone — will never reliably press a button, remember a password, or navigate a menu. So the app had to be designed for passive use first, active use second.",
+    problem: "Most health and safety apps assume an engaged, tech-comfortable user who checks in daily. Elderly users frequently don't fit that assumption, which means critical signals (a fall, a missed dose, a mood change) can go unnoticed until it's too late.",
+    approach: "I designed the elder-facing app (App A) with a 9-step registration flow kept deliberately short and high-contrast, a lifestyle questionnaire that triggers once profile completion hits 75% rather than front-loading everything at signup, and a 15-day trial period to establish a personal baseline before the system starts flagging anomalies. The home screen surfaces vitals, mood, and a one-tap SOS button with minimal visual clutter — large touch targets, high contrast text, and no nested menus. Alongside the interface, the team defined a passive IoT hardware layer (ESP32-C3, MPU6050 accelerometer, MAX30102 pulse oximeter, SIM800L GSM module) so critical events can be detected without the user doing anything at all.",
+    outcome: "The project won 3rd Runner-Up (Track 03: Technology for Social Good) at a college hackathon and received a grant to continue development, with a roadmap toward real users, published research, and a patent filing.",
+    role: "UI/UX Design & Frontend (Flutter)",
+    tools: "Figma, Flutter, Dart, ESP32-C3, MAX30102",
+    type: "Hackathon · Grant-funded, Ongoing",
+    actions: []
+  },
+  {
+    id: "fleetsync",
+    title: "FleetSync — Logistics Management System",
+    category: "Hackathon",
+    status: "Ongoing",
+    tag: "UI/UX · Dashboard System",
+    icon: "fa-solid fa-truck-fast",
+    accent: ["#E8C47A", "#3A2147"],
+    image: null,
+    summary: "A fleet management dashboard system with five cross-linked role-based views sharing real-time central state.",
+    overview: "FleetSync (also referred to as FleetFlow in earlier iterations) reimagines fleet operations as five connected views instead of one generic dashboard — because a dispatcher, a driver, a safety officer, and a finance lead genuinely need to see different things.",
+    problem: "Fleet software often forces every role into the same dense dashboard, which means most users are staring at data that isn't relevant to their job while the information they actually need is buried.",
+    approach: "I designed five dedicated dashboards — Dispatcher, Driver, Fleet Manager, Safety Officer, and Finance — each surfacing only the metrics and actions relevant to that role, but all reading from a shared real-time state so nothing has to be re-entered or reconciled between views. The Dispatcher view prioritises live vehicle assignment; the Driver view is stripped down to routes, status, and alerts; the Safety Officer view surfaces incident and compliance data; Finance tracks cost per route and fuel spend.",
+    outcome: "The dashboard system is a working prototype demonstrating cross-role UX at hackathon scale, and remains an active project as the underlying data model is expanded.",
+    role: "UI/UX Design & Frontend",
+    tools: "Figma, HTML, CSS, JavaScript",
+    type: "Hackathon · Ongoing",
+    actions: []
+  },
+  {
+    id: "travelx",
+    title: "TravelX — Holiday Trip Planner",
+    category: "UI/UX",
+    status: "AI-assisted",
+    tag: "UI/UX Design · Web",
+    icon: "fa-solid fa-plane",
+    accent: ["#0E7490", "#3A2147"],
+    image: "logo 2.png",
+    summary: "A responsive travel booking website with seamless UX — intuitive search, personalised recommendations, and a streamlined booking flow.",
+    overview: "TravelX is a holiday trip planning and booking experience designed around the three moments that usually cause travel-site drop-off: search, comparison, and checkout.",
+    problem: "Travel booking sites tend to overload users with filters and options before they've even decided where they're going, which increases decision fatigue and abandonment.",
+    approach: "I used AI-assisted design workflows to iterate quickly between wireframe and polish — starting from destination discovery with personalised recommendations, narrowing into a comparison view, and ending in a booking flow reduced to the minimum number of steps. Visual design leans into large destination imagery and calm typography to keep the experience feeling like planning a holiday, not filling out a form.",
+    outcome: "A complete responsive UI/UX case study covering discovery through booking, documented as a standalone case-study page.",
+    role: "UI/UX Design",
+    tools: "Figma, AI-assisted design tools",
+    type: "UI/UX Case Study",
+    actions: [{ label: "View Full Case Study", href: "startup-travelx.html", icon: "fa-solid fa-arrow-up-right-from-square" }]
+  },
+  {
+    id: "trinetra",
+    title: "Trinetra — Misinformation Detection",
+    category: "UI/UX",
+    status: "Concept",
+    tag: "App Design · Mobile",
+    icon: "fa-solid fa-eye",
+    accent: ["#5C3370", "#D4A853"],
+    image: "Trinetra.jpg",
+    summary: "A misinformation detection app with clear visual cues, educational resources, and real-time fact-checking features.",
+    overview: "Trinetra ('three eyes') is a concept for a misinformation-detection app designed to help users evaluate content credibility without feeling accused or lectured.",
+    problem: "Most fact-checking tools either bury findings in dense reports or use alarmist red banners that make users defensive rather than curious — reducing how often the tool is actually trusted or used.",
+    approach: "I designed a calm, non-alarmist visual language: simple credibility indicators instead of binary true/false stamps, contextual education woven into the flow instead of a separate 'learn more' page, and a real-time fact-checking surface that explains its reasoning rather than just asserting a verdict.",
+    outcome: "A complete UI/UX concept and interaction system, documented as a standalone case-study page with the full visual language and flows.",
+    role: "UI/UX Design",
+    tools: "Figma",
+    type: "UI/UX Case Study",
+    actions: [{ label: "View Full Case Study", href: "startup-trinetra.html", icon: "fa-solid fa-arrow-up-right-from-square" }]
+  },
+  {
+    id: "foodie",
+    title: "Foodie — Food Delivery App",
+    category: "UI/UX",
+    status: "Concept",
+    tag: "UI/UX Design · Mobile App",
+    icon: "fa-solid fa-utensils",
+    accent: ["#D4A853", "#7A6585"],
+    image: null,
+    summary: "A food delivery app concept focused on fast browsing, clear order tracking, and a frictionless checkout experience.",
+    overview: "Foodie is a UI/UX practice project exploring the food-delivery category — a deliberately competitive, well-trodden space chosen specifically to sharpen fundamentals against a high visual bar.",
+    problem: "Food delivery apps live or die on speed: how fast a hungry user can go from opening the app to placing an order. Every extra tap is a chance to lose them.",
+    approach: "I designed the core flow end-to-end in Figma: a browsing screen built around large, appetite-driving food photography and quick category filters, a cart and checkout sequence trimmed to essential steps, and a live order-tracking screen with clear status states so users always know what's happening after they pay.",
+    outcome: "A polished, fully-clickable Figma prototype demonstrating a complete mobile ordering flow from discovery to delivery.",
+    role: "UI/UX Design",
+    tools: "Figma",
+    type: "UI/UX Practice Project",
+    actions: []
+  },
+  {
+    id: "gadgetkart",
+    title: "GadgetKart — Mobile Accessories E-Commerce",
+    category: "UI/UX",
+    status: "Concept",
+    tag: "Landing Page · E-Commerce",
+    icon: "fa-solid fa-mobile-screen-button",
+    accent: ["#3A2147", "#D4A853"],
+    image: null,
+    summary: "A mobile accessories e-commerce landing page built to convert browsers into buyers.",
+    overview: "GadgetKart is a landing page concept for a mobile-accessories storefront, designed around a simple question: what does a visitor need to see in the first five seconds to trust this store enough to keep scrolling?",
+    problem: "Accessory e-commerce pages often bury their bestsellers under generic hero banners, making it harder for a new visitor to quickly understand what's worth buying.",
+    approach: "The layout leads with product-first visuals — bestsellers and category tiles above the fold — paired with tight, scannable category navigation and clear calls to action at every scroll stage, rather than a single CTA buried at the top.",
+    outcome: "A complete landing page design ready to pair with a storefront backend, focused on conversion-oriented layout decisions.",
+    role: "UI/UX Design",
+    tools: "Figma",
+    type: "UI/UX Practice Project",
+    actions: []
+  },
+  {
+    id: "bakery",
+    title: "Simple Bakery — Landing Page",
+    category: "UI/UX",
+    status: "Concept",
+    tag: "UI/UX Design · Web",
+    icon: "fa-solid fa-bread-slice",
+    accent: ["#E8C47A", "#5C3370"],
+    image: null,
+    summary: "A warm, inviting landing page for a bakery brand, built to showcase products and drive orders.",
+    overview: "A landing page concept for a bakery brand, designed to feel handcrafted and warm rather than templated — the opposite instinct of most e-commerce UI work.",
+    problem: "Small food brands often end up with landing pages that look identical to every other Shopify template, losing the personality that made the brand appealing in the first place.",
+    approach: "I chose a warmer type pairing and a cream-and-terracotta palette instead of the site's usual gold/violet system, built around large product photography and a short, simple ordering path — this project intentionally does not use my usual portfolio theme, since a bakery brand needed its own identity.",
+    outcome: "A complete single-page design showcasing product highlights and a clear path to ordering.",
+    role: "UI/UX Design",
+    tools: "Figma",
+    type: "UI/UX Practice Project",
+    actions: []
+  },
+  {
+    id: "pizzahunt",
+    title: "Pizza Hunt — Pizza Ordering UI",
+    category: "UI/UX",
+    status: "Makeathon",
+    tag: "UI/UX Design · Mobile",
+    icon: "fa-solid fa-pizza-slice",
+    accent: ["#D4A853", "#0E7490"],
+    image: null,
+    summary: "A pizza ordering interface designed during a Figma Makeathon, focused on fast customization and checkout.",
+    overview: "Pizza Hunt was designed during a timed Figma Makeathon — a design sprint format that rewards fast, confident decision-making over long deliberation.",
+    problem: "Pizza customization UIs tend to either oversimplify (losing flexibility) or overcomplicate (a wall of toppings and modifiers). The goal was a build-your-own flow that stays visual and fast even with many options.",
+    approach: "The interface uses a large, live-updating pizza preview as toppings are selected, grouped topping categories to avoid a long single list, and a size/crust selector kept to a single screen — followed by a minimal-friction checkout screen with order summary and one clear confirm action.",
+    outcome: "A complete ordering flow delivered within the Makeathon's time constraint, from customization through checkout.",
+    role: "UI/UX Design",
+    tools: "Figma",
+    type: "UI/UX · Figma Makeathon",
+    actions: []
+  },
+  {
+    id: "portfolio",
+    title: "Personal Portfolio Website",
+    category: "Frontend",
+    status: "Live",
+    tag: "Frontend Development · Web",
+    icon: "fa-solid fa-code",
+    accent: ["#D4A853", "#0a0706"],
+    image: "uiux.jpg",
+    summary: "This portfolio — designed and built from scratch with a responsive layout, smooth animations, and an editorial aesthetic.",
+    overview: "The site you're on right now — designed and hand-built rather than assembled from a template, as a demonstration of both UI/UX and frontend craft together.",
+    problem: "Most personal portfolios read as either a resume in disguise or a generic template with swapped-in colours. The goal was something that feels considered — an editorial, gallery-like presentation of the work itself.",
+    approach: "Built with plain HTML, CSS, and JavaScript — no framework — using a dark, editorial design language with gold accents, a custom animated cursor, scroll-reveal animations throughout, and a fully responsive layout down to small mobile screens.",
+    outcome: "A live, continuously-updated portfolio site that also functions as its own frontend development case study.",
+    role: "UI/UX Design & Frontend Development",
+    tools: "HTML, CSS, JavaScript",
+    type: "Frontend · Live Project",
+    actions: []
+  }
+];
+
+const CATEGORIES = ["All", "UI/UX", "Hackathon", "Frontend"];
+
+function projectHeroArt(p, sizeClass) {
+  // Returns HTML for a project's hero visual — a real photo if available,
+  // otherwise a themed illustrated gradient card so nothing is ever left blank.
+  if (p.image) {
+    return `<img src="${p.image}" alt="${p.title}" class="${sizeClass}">`;
+  }
+  const [c1, c2] = p.accent;
+  return `
+    <div class="${sizeClass} hero-art" style="background:linear-gradient(135deg, ${c1}22 0%, ${c2}18 100%);">
+      <span class="hero-art-shape hero-art-shape-1" style="background:${c1}33;"></span>
+      <span class="hero-art-shape hero-art-shape-2" style="background:${c2}2e;"></span>
+      <span class="hero-art-shape hero-art-shape-3" style="border-color:${c1}55;"></span>
+      <i class="${p.icon} hero-art-icon" style="color:${c1};"></i>
+    </div>
+  `;
+}
