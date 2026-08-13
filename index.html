@@ -117,9 +117,13 @@
             <div>
                 <div class="section-label reveal">My Work</div>
                 <h2 class="section-title reveal reveal-delay-1">Selected <em>Projects</em></h2>
+                <p class="section-subtitle reveal reveal-delay-2" style="color: var(--text-body); font-size: 16.5px; margin-top: 12px; margin-bottom: 0; max-width: 700px; line-height: 1.7;">
+                    A curated selection of my work across multiple disciplines, showcasing versatility in <strong>UI/UX Design</strong>, <strong>Frontend Development</strong>, and award-winning <strong>Hackathon Projects</strong>.
+                </p>
             </div>
         </div>
-        <div class="project-grid">
+        <div class="project-grid" id="homepage-projects">
+            <!-- Dynamically populated from projects-data.js to prevent blurry/stretched logo images -->
             <a href="project-detail.html?id=vrudhseva" class="project-card reveal">
                 <div class="project-card-img"><img src="assets/images/Logo (2).png" alt="Vrudhseva"></div>
                 <div class="project-card-body">
@@ -367,98 +371,180 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="js/projects-data.js"></script>
 <script src="js/site-forms.js"></script>
 <script src="js/portfolio.js"></script>
 <script>
+// Dynamically load selected projects on the homepage to prevent blurry logo scaling
+document.addEventListener("DOMContentLoaded", function () {
+    const grid = document.getElementById("homepage-projects");
+    if (grid && window.PROJECTS) {
+        const selectedIds = ["vrudhseva", "travelx", "trinetra", "vikranth"];
+        const selectedProjects = selectedIds.map(id => PROJECTS.find(p => p.id === id)).filter(Boolean);
+        
+        let html = '';
+        selectedProjects.forEach((p, idx) => {
+            const delayClass = idx > 0 ? ` reveal-delay-${idx}` : '';
+            const heroMedia = projectHeroArt(p, 'project-card-img');
+            html += `
+                <a href="project-detail.html?id=${p.id}" class="project-card reveal${delayClass}">
+                    ${heroMedia}
+                    <div class="project-card-body">
+                        <span class="project-tag">${p.category}</span>
+                        <h3>${p.title}</h3>
+                        <p>${p.summary}</p>
+                    </div>
+                </a>
+            `;
+        });
+        
+        // Append the Explore More CTA card
+        html += `
+            <article class="project-card project-card-cta reveal reveal-delay-4">
+                <div class="project-card-body">
+                    <span class="project-tag">All Projects</span>
+                    <h3>Explore More Case Studies</h3>
+                    <p>Discover additional UI/UX and web design projects with complete process documentation, wireframes, and polished final interfaces.</p>
+                    <a href="all-projects.html" class="project-view-btn">View All Projects <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </article>
+        `;
+        
+        grid.innerHTML = html;
+    }
+
+    // Scroll reveal (instantiated after dynamic elements are in DOM)
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+            if (e.isIntersecting) e.target.classList.add('visible');
+        });
+    }, { threshold: .12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+});
+
 // Custom Cursor
 const cursorDot = document.getElementById('cursor-dot');
 const cursorRing = document.getElementById('cursor-ring');
-let mouseX=0,mouseY=0,ringX=0,ringY=0;
-document.addEventListener('mousemove',e=>{mouseX=e.clientX;mouseY=e.clientY;cursorDot.style.left=mouseX+'px';cursorDot.style.top=mouseY+'px';});
-(function animateRing(){ringX+=(mouseX-ringX)*.12;ringY+=(mouseY-ringY)*.12;cursorRing.style.left=ringX+'px';cursorRing.style.top=ringY+'px';requestAnimationFrame(animateRing);})();
-document.querySelectorAll('a,button').forEach(el=>{
-    el.addEventListener('mouseenter',()=>{cursorDot.style.width='14px';cursorDot.style.height='14px';cursorRing.style.width='54px';cursorRing.style.height='54px';cursorRing.style.opacity='.3';});
-    el.addEventListener('mouseleave',()=>{cursorDot.style.width='8px';cursorDot.style.height='8px';cursorRing.style.width='38px';cursorRing.style.height='38px';cursorRing.style.opacity='.6';});
+let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
+document.addEventListener('mousemove', e => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    cursorDot.style.left = mouseX + 'px';
+    cursorDot.style.top = mouseY + 'px';
+});
+(function animateRing() {
+    ringX += (mouseX - ringX) * .12;
+    ringY += (mouseY - ringY) * .12;
+    cursorRing.style.left = ringX + 'px';
+    cursorRing.style.top = ringY + 'px';
+    requestAnimationFrame(animateRing);
+})();
+document.querySelectorAll('a, button').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+        cursorDot.style.width = '14px';
+        cursorDot.style.height = '14px';
+        cursorRing.style.width = '54px';
+        cursorRing.style.height = '54px';
+        cursorRing.style.opacity = '.3';
+    });
+    el.addEventListener('mouseleave', () => {
+        cursorDot.style.width = '8px';
+        cursorDot.style.height = '8px';
+        cursorRing.style.width = '38px';
+        cursorRing.style.height = '38px';
+        cursorRing.style.opacity = '.6';
+    });
 });
 
 // Sticky header
-const header=document.getElementById('header');
-window.addEventListener('scroll',()=>{header.classList.toggle('scrolled',window.scrollY>60);});
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 60);
+});
 
 // Active nav
-const sections=document.querySelectorAll('section[id]');
-const navLinks=document.querySelectorAll('nav a');
-window.addEventListener('scroll',()=>{
-    let current='';
-    sections.forEach(s=>{if(window.scrollY>=s.offsetTop-120)current=s.getAttribute('id');});
-    navLinks.forEach(a=>{a.classList.toggle('active',a.getAttribute('href')==='#'+current);});
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('nav a');
+window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+        if (window.scrollY >= s.offsetTop - 120) current = s.getAttribute('id');
+    });
+    navLinks.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
 });
 
 // Mobile nav
-const navToggle=document.getElementById('nav-toggle');
-const mainNav=document.getElementById('main-nav');
-navToggle.addEventListener('click',()=>{const open=mainNav.classList.toggle('open');navToggle.classList.toggle('open',open);navToggle.setAttribute('aria-expanded',String(open));});
-mainNav.querySelectorAll('a').forEach(a=>{a.addEventListener('click',()=>{mainNav.classList.remove('open');navToggle.classList.remove('open');navToggle.setAttribute('aria-expanded','false');});});
-
-// Scroll reveal
-const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+const navToggle = document.getElementById('nav-toggle');
+const mainNav = document.getElementById('main-nav');
+navToggle.addEventListener('click', () => {
+    const open = mainNav.classList.toggle('open');
+    navToggle.classList.toggle('open', open);
+    navToggle.setAttribute('aria-expanded', String(open));
+});
+mainNav.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+        mainNav.classList.remove('open');
+        navToggle.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+    });
+});
 
 // Floating particle field
-const particleField=document.getElementById('particle-field');
-if(particleField){
-    const count=window.innerWidth<600?12:26;
-    for(let i=0;i<count;i++){
-        const p=document.createElement('div');
-        p.className='particle';
-        const size=Math.random()*3+1.5;
-        p.style.width=size+'px';
-        p.style.height=size+'px';
-        p.style.left=Math.random()*100+'%';
-        p.style.bottom='-20px';
-        p.style.setProperty('--drift',(Math.random()*80-40)+'px');
-        p.style.animationDuration=(Math.random()*14+14)+'s';
-        p.style.animationDelay=(Math.random()*14)+'s';
+const particleField = document.getElementById('particle-field');
+if (particleField) {
+    const count = window.innerWidth < 600 ? 12 : 26;
+    for (let i = 0; i < count; i++) {
+        const p = document.createElement('div');
+        p.className = 'particle';
+        const size = Math.random() * 3 + 1.5;
+        p.style.width = size + 'px';
+        p.style.height = size + 'px';
+        p.style.left = Math.random() * 100 + '%';
+        p.style.bottom = '-20px';
+        p.style.setProperty('--drift', (Math.random() * 80 - 40) + 'px');
+        p.style.animationDuration = (Math.random() * 14 + 14) + 's';
+        p.style.animationDelay = (Math.random() * 14) + 's';
         particleField.appendChild(p);
     }
 }
 
 // Count-up stat numbers
-const countEls=document.querySelectorAll('[data-count]');
-const countObserver=new IntersectionObserver(entries=>{
-    entries.forEach(entry=>{
-        if(!entry.isIntersecting)return;
-        const el=entry.target;
-        const target=parseInt(el.dataset.count,10);
-        const suffix=el.dataset.suffix||'';
-        const duration=1000;
-        const start=performance.now();
-        function tick(now){
-            const progress=Math.min((now-start)/duration,1);
-            const eased=1-Math.pow(1-progress,3);
-            el.textContent=Math.round(eased*target)+suffix;
-            if(progress<1)requestAnimationFrame(tick);
+const countEls = document.querySelectorAll('[data-count]');
+const countObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const target = parseInt(el.dataset.count, 10);
+        const suffix = el.dataset.suffix || '';
+        const duration = 1000;
+        const start = performance.now();
+        function tick(now) {
+            const progress = Math.min((now - start) / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            el.textContent = Math.round(eased * target) + suffix;
+            if (progress < 1) requestAnimationFrame(tick);
         }
         requestAnimationFrame(tick);
         countObserver.unobserve(el);
     });
-},{threshold:.4});
-countEls.forEach(el=>countObserver.observe(el));
+}, { threshold: .4 });
+countEls.forEach(el => countObserver.observe(el));
 
 // Profile image tilt
-const tiltFrame=document.getElementById('tilt-frame');
-if(tiltFrame){
-    tiltFrame.addEventListener('mousemove',e=>{
-        const rect=tiltFrame.getBoundingClientRect();
-        const x=(e.clientX-rect.left)/rect.width-0.5;
-        const y=(e.clientY-rect.top)/rect.height-0.5;
-        tiltFrame.style.transform=`perspective(800px) rotateY(${x*10}deg) rotateX(${-y*10}deg) scale(1.02)`;
+const tiltFrame = document.getElementById('tilt-frame');
+if (tiltFrame) {
+    tiltFrame.addEventListener('mousemove', e => {
+        const rect = tiltFrame.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        tiltFrame.style.transform = `perspective(800px) rotateY(${x * 10}deg) rotateX(${-y * 10}deg) scale(1.02)`;
     });
-    tiltFrame.addEventListener('mouseleave',()=>{
-        tiltFrame.style.transform='perspective(800px) rotateY(0) rotateX(0) scale(1)';
+    tiltFrame.addEventListener('mouseleave', () => {
+        tiltFrame.style.transform = 'perspective(800px) rotateY(0) rotateX(0) scale(1)';
     });
 }
-
 </script>
 </body>
 </html>

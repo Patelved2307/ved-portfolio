@@ -23,7 +23,7 @@ img{max-width:100%;display:block;}
 
 /* HERO */
 .pd-hero{position:relative;height:min(48vh,420px);min-height:280px;overflow:hidden;}
-.pd-hero img{width:100%;height:100%;object-fit:cover;}
+.pd-hero img{width:100%;height:100%;object-fit:cover;object-position:center top;}
 .pd-hero .hero-art{width:100%;height:100%;border-radius:0;border:none;margin:0;}
 .pd-hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg, rgba(26,16,32,0.05) 0%, rgba(26,16,32,0.55) 75%, rgba(26,16,32,0.85) 100%);display:flex;align-items:flex-end;}
 .pd-hero-inner{max-width:1000px;margin:0 auto;width:100%;padding:0 52px 40px;}
@@ -85,11 +85,17 @@ img{max-width:100%;display:block;}
 /* Hero-art reused from projects-data helper */
 .hero-art{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;}
 .hero-art-icon{font-size:88px;position:relative;z-index:2;filter:drop-shadow(0 8px 20px rgba(0,0,0,0.25));}
+.hero-art-logo{
+    max-width:35%;max-height:45%;
+    object-fit:contain;position:relative;z-index:2;
+    filter:drop-shadow(0 10px 24px rgba(0,0,0,0.3));
+}
 .hero-art-shape{position:absolute;border-radius:50%;}
 .hero-art-shape-1{width:220px;height:220px;top:-60px;right:-40px;}
 .hero-art-shape-2{width:160px;height:160px;bottom:-50px;left:-30px;}
 .hero-art-shape-3{width:120px;height:120px;top:30px;left:40px;border:2px solid;border-radius:50%;background:transparent!important;}
 .pd-related-img.hero-art .hero-art-icon{font-size:36px;}
+.pd-related-img.hero-art .hero-art-logo{max-width:40%;max-height:45%;}
 .pd-related-img.hero-art .hero-art-shape-1{width:100px;height:100px;}
 .pd-related-img.hero-art .hero-art-shape-2{width:70px;height:70px;}
 .pd-related-img.hero-art .hero-art-shape-3{width:50px;height:50px;}
@@ -151,9 +157,7 @@ if (!project) {
 } else {
     document.title = project.title + " — Patel Ved";
 
-    const heroMedia = project.image
-        ? `<img src="${project.image}" alt="${project.title}">`
-        : projectHeroArt(project, 'hero-art');
+    const heroMedia = projectHeroArt(project, 'hero-art');
 
     content.innerHTML = `
         <section class="pd-hero">

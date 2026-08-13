@@ -344,9 +344,67 @@ nav a:hover,nav a.active{color:var(--gold);border-color:var(--border);background
 .project-card:hover{border-color:var(--border);transform:translateY(-6px);box-shadow:0 24px 48px rgba(0,0,0,.5),var(--glow)}
 
 .project-card-img{width:100%;height:200px;overflow:hidden;position:relative}
-.project-card-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,var(--dark-3))}
-.project-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.project-card-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,var(--dark-3));z-index:3;}
+.project-card-img img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .5s ease}
 .project-card:hover .project-card-img img{transform:scale(1.06)}
+
+/* Illustrated hero-art and centered logo styles */
+.hero-art {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hero-art-icon {
+    font-size: 52px;
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(0 6px 14px rgba(201,168,76,0.18));
+    transition: transform .4s ease;
+}
+.hero-art-shape {
+    position: absolute;
+    border-radius: 50%;
+}
+.hero-art-shape-1 {
+    width: 130px;
+    height: 130px;
+    top: -40px;
+    right: -30px;
+}
+.hero-art-shape-2 {
+    width: 90px;
+    height: 90px;
+    bottom: -30px;
+    left: -20px;
+}
+.hero-art-shape-3 {
+    width: 70px;
+    height: 70px;
+    top: 20px;
+    left: 22px;
+    border: 2px solid;
+    border-radius: 50%;
+    background: transparent !important;
+}
+.project-card:hover .hero-art-icon {
+    transform: scale(1.08) rotate(-4deg);
+}
+.hero-art-logo {
+    max-width: 50%;
+    max-height: 50%;
+    object-fit: contain;
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(0 6px 16px rgba(0,0,0,.25));
+    transition: transform .4s ease;
+}
+.project-card:hover .hero-art-logo {
+    transform: scale(1.08) rotate(-2deg);
+}
 
 .project-card-body{padding:24px}
 .project-tag{

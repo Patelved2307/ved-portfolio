@@ -256,18 +256,30 @@ const PROJECTS = [
 const CATEGORIES = ["All", "UI/UX", "Hackathon", "Frontend"];
 
 function projectHeroArt(p, sizeClass) {
-  // Returns HTML for a project's hero visual — a real photo if available,
-  // otherwise a themed illustrated gradient card so nothing is ever left blank.
-  if (p.image) {
+  // Check if the image is a logo (which needs a centered, contained layout instead of full-card cover)
+  const isLogo = p.image && (
+    p.image.includes('Logo') || 
+    p.image.includes('logo') || 
+    p.image.includes('Trinetra')
+  );
+
+  if (p.image && !isLogo) {
     return `<img src="${p.image}" alt="${p.title}" class="${sizeClass}">`;
   }
+
   const [c1, c2] = p.accent;
+  
+  // If it has a logo image, render it centered. Otherwise show the themed FontAwesome icon.
+  const contentHtml = p.image
+    ? `<img src="${p.image}" alt="${p.title}" class="hero-art-logo">`
+    : `<i class="${p.icon} hero-art-icon" style="color:${c1};"></i>`;
+
   return `
-    <div class="${sizeClass} hero-art" style="background:linear-gradient(135deg, ${c1}22 0%, ${c2}18 100%);">
+    <div class="${sizeClass} hero-art" style="background:linear-gradient(135deg, ${c1}22 0%, ${c2}18 100%); display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden;">
       <span class="hero-art-shape hero-art-shape-1" style="background:${c1}33;"></span>
       <span class="hero-art-shape hero-art-shape-2" style="background:${c2}2e;"></span>
       <span class="hero-art-shape hero-art-shape-3" style="border-color:${c1}55;"></span>
-      <i class="${p.icon} hero-art-icon" style="color:${c1};"></i>
+      ${contentHtml}
     </div>
   `;
 }
