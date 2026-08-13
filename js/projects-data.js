@@ -282,24 +282,24 @@ const PROJECTS = [
 
 const CATEGORIES = ["All", "UI/UX", "Hackathon", "Frontend"];
 
-function projectHeroArt(p, sizeClass) {
-  // Check if the image is a logo (which needs a centered, contained layout instead of full-card cover)
+function projectHeroArt(p, sizeClass, forceSolid = false) {
+  // Check if the image is a logo (which needs a contained layout instead of full-card cover)
   const isLogo = p.image && (
     p.image.includes('Logo') || 
     p.image.includes('logo') || 
     p.image.includes('Trinetra')
   );
 
-  if (p.image && !isLogo) {
+  if (p.image && !isLogo && !forceSolid) {
     return `<img src="${p.image}" alt="${p.title}" class="${sizeClass}">`;
   }
 
   const [c1, c2] = p.accent;
   
-  // If it has a logo image, render it centered. Otherwise show the themed FontAwesome icon.
-  const contentHtml = p.image
+  // If we force solid, we don't display the full card cover image, we show the logo/icon centered.
+  const contentHtml = (p.image && !forceSolid)
     ? `<img src="${p.image}" alt="${p.title}" class="hero-art-logo">`
-    : `<i class="${p.icon} hero-art-icon" style="color:${c1};"></i>`;
+    : `<i class="${p.icon} hero-art-icon" style="color:${c1}; font-size: 48px;"></i>`;
 
   return `
     <div class="${sizeClass} hero-art" style="background:linear-gradient(135deg, ${c1}22 0%, ${c2}18 100%); display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden;">

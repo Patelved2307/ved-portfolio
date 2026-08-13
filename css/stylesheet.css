@@ -511,22 +511,33 @@ nav a:hover,nav a.active{color:var(--gold);border-color:var(--border);background
 /* ============================================================
    SERVICES (HOMEPAGE SECTION)
    ============================================================ */
-#services{padding:120px 56px;background:var(--cream);position:relative}
+#services{padding:120px 56px;background:var(--dark-2);position:relative;border-top:1px solid var(--border-dim)}
 .services-container{max-width:1100px;margin:0 auto}
 .services-header{margin-bottom:56px}
 .services-home-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .service-home-card{
-    background:var(--white);border:1.5px solid rgba(58,33,71,0.08);
-    border-radius:20px;padding:36px 28px;box-shadow:0 4px 20px var(--shadow);
-    transition:transform .3s ease, box-shadow .3s ease;
+    background:linear-gradient(145deg,var(--dark-4),var(--dark-5));
+    border:1px solid var(--border);border-radius:20px;padding:36px 28px;
+    box-shadow:var(--glow);transition:transform .3s ease, border-color .3s ease, box-shadow .3s ease;
 }
-.service-home-card:hover{transform:translateY(-6px);box-shadow:0 20px 48px var(--shadow2)}
-.service-home-icon{font-size:32px;color:var(--accent);margin-bottom:20px}
-.service-home-card h3{font-family:'Playfair Display',serif;font-size:22px;color:var(--violet);margin-bottom:12px}
-.service-home-card p{font-size:14px;line-height:1.65;color:var(--text2)}
-.freelance-home-card{background:linear-gradient(135deg,#1f1625 0%,#0f0d0b 100%);border:1.5px solid var(--accent)}
-.freelance-home-card h3{color:var(--white)}
-.freelance-home-card p{color:#a89e90}
+.service-home-card:hover{
+    transform:translateY(-6px);border-color:var(--gold);
+    box-shadow:0 12px 32px rgba(201,168,76,0.25);
+}
+.service-home-icon{font-size:32px;color:var(--gold);margin-bottom:20px}
+.service-home-card h3{font-family:var(--font-display);font-size:22px;color:var(--cream);margin-bottom:12px}
+.service-home-card p{font-size:14px;line-height:1.65;color:var(--text-body)}
+
+.freelance-home-card{
+    background:linear-gradient(135deg,rgba(20,168,0,0.12) 0%,rgba(10,95,0,0.04) 100%);
+    border:1px solid rgba(20,168,0,0.3);
+}
+.freelance-home-card:hover{
+    border-color:#14a800;
+    box-shadow:0 12px 32px rgba(20,168,0,0.25);
+}
+.freelance-home-card h3{color:var(--cream)}
+.freelance-home-card .service-home-icon{color:#14a800}
 
 @media(max-width:900px){
     #services{padding:80px 24px}

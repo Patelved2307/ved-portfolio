@@ -177,7 +177,24 @@ if (!project) {
 } else {
     document.title = project.title + " — Patel Ved";
 
-    const heroMedia = projectHeroArt(project, 'hero-art');
+    const heroMedia = projectHeroArt(project, 'hero-art', true);
+
+    let mainShowcaseHtml = '';
+    const isLogo = project.image && (
+        project.image.includes('Logo') || 
+        project.image.includes('logo') || 
+        project.image.includes('Trinetra')
+    );
+    if (project.image && !isLogo) {
+        mainShowcaseHtml = `
+            <div class="pd-section" style="margin-top: 48px; opacity: 0; transform: translateY(14px); animation: pdIn .6s cubic-bezier(.25,.46,.45,.94) forwards; animation-delay: .15s;">
+                <h3><i class="fa-solid fa-desktop"></i> Project Showcase</h3>
+                <div class="pd-gallery-item" style="max-width: 100%; overflow: hidden; margin-top: 16px; border: 1.5px solid var(--warm); border-radius: 12px; box-shadow: 0 8px 24px var(--shadow);">
+                    <img src="${project.image}" alt="${project.title} Preview" style="width: 100%; height: auto; display: block; border-radius: 10px;">
+                </div>
+            </div>
+        `;
+    }
 
     let galleryHtml = '';
     if (project.gallery && project.gallery.length > 0) {
@@ -226,6 +243,7 @@ if (!project) {
                     <p>${project.outcome}</p>
                 </div>
 
+                ${mainShowcaseHtml}
                 ${galleryHtml}
 
                 <div class="pd-actions" style="margin-top: 36px; opacity: 0; transform: translateY(14px); animation: pdIn .6s cubic-bezier(.25,.46,.45,.94) forwards; animation-delay: .25s;">
