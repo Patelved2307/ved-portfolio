@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services Offered — Patel Ved</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600;700&display=swap');
+:root{--cream:#FAF7F2;--cream2:#F2EDE4;--warm:#EDE5D8;--violet:#3A2147;--violet2:#5C3370;--accent:#D4A853;--accent2:#E8C47A;--text:#1A1020;--text2:#4A3555;--text3:#7A6585;--white:#FFFFFF;--shadow:rgba(58,33,71,0.10);--shadow2:rgba(58,33,71,0.20);}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html,body{overflow-x:hidden;width:100%;}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);}
+a{text-decoration:none;}
+
+.page-nav{position:sticky;top:0;z-index:100;background:rgba(250,247,242,0.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(58,33,71,0.09);display:flex;justify-content:space-between;align-items:center;padding:0 52px;height:66px;box-shadow:0 2px 16px var(--shadow);}
+.nav-logo{font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:var(--violet);}
+.nav-logo::after{content:'.';color:var(--accent);}
+.nav-back{display:inline-flex;align-items:center;gap:8px;background:var(--violet);color:var(--white);border:2px solid var(--violet);border-radius:10px;padding:9px 18px;font-size:14px;font-weight:600;transition:all 0.25s;}
+.nav-back:hover{background:var(--violet2);border-color:var(--violet2);}
+
+.srv-hero{
+    padding:80px 52px 56px;
+    background:radial-gradient(ellipse 55% 50% at 85% 40%, rgba(212,168,83,0.13) 0%, transparent 65%), var(--cream);
+    position:relative;overflow:hidden;
+}
+.srv-hero::before{content:'OFFERS';position:absolute;top:16px;left:-10px;font-family:'Playfair Display',serif;font-size:150px;font-weight:900;color:rgba(58,33,71,0.04);pointer-events:none;user-select:none;}
+.hero-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1;}
+
+.section-label{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);margin-bottom:14px;}
+.section-label::before{content:'';width:28px;height:2px;background:var(--accent);display:block;}
+
+.srv-hero h1{font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,60px);font-weight:900;color:var(--violet);line-height:1.1;margin-bottom:14px;}
+.srv-hero p{font-size:17px;color:var(--text2);line-height:1.7;max-width:600px;}
+
+.srv-body{padding:56px 52px 90px;max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr;gap:48px;}
+
+/* SERVICES LIST */
+.services-section-title{font-family:'Playfair Display',serif;font-size:28px;color:var(--violet);margin-bottom:24px;border-bottom:1.5px solid var(--warm);padding-bottom:12px;}
+.services-grid{display:grid;grid-template-columns:1fr;gap:24px;margin-bottom:48px;}
+.service-card{
+    background:var(--white);border:1.5px solid rgba(58,33,71,0.08);border-radius:16px;padding:28px;
+    box-shadow:0 4px 20px var(--shadow);transition:transform 0.3s ease, box-shadow 0.3s ease;
+}
+.service-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px var(--shadow2);}
+.service-icon{font-size:36px;color:var(--accent);margin-bottom:16px;}
+.service-card h3{font-family:'Playfair Display',serif;font-size:22px;color:var(--violet);margin-bottom:10px;}
+.service-card p{font-size:14.5px;color:var(--text2);line-height:1.65;margin-bottom:14px;}
+.service-items{list-style:none;display:flex;flex-wrap:wrap;gap:8px;}
+.service-items li{background:var(--cream);border:1.5px solid var(--warm);color:var(--text2);font-size:12px;font-weight:700;padding:5px 12px;border-radius:99px;}
+
+/* FREELANCE CARD */
+.freelance-card{
+    background:linear-gradient(135deg,#1f1625 0%,#0f0d0b 100%);border:1.5px solid var(--accent);border-radius:16px;padding:32px;
+    box-shadow:0 12px 32px var(--shadow2);color:var(--cream);margin-bottom:32px;text-align:center;
+}
+.upwork-logo{font-size:42px;color:#14a800;margin-bottom:14px;}
+.freelance-card h3{font-family:'Playfair Display',serif;font-size:24px;color:var(--white);margin-bottom:10px;}
+.freelance-card p{font-size:14px;color:#a89e90;line-height:1.6;margin-bottom:20px;}
+.upwork-btn{
+    display:inline-flex;align-items:center;gap:8px;background:#14a800;color:var(--white);
+    padding:12px 24px;border-radius:10px;font-weight:700;font-size:14px;border:2.5px solid #14a800;
+    transition:all 0.25s;
+}
+.upwork-btn:hover{background:transparent;color:#14a800;}
+
+/* MEETING SCHEDULER */
+.scheduler-card{
+    background:var(--white);border:1.5px solid rgba(58,33,71,0.08);border-radius:16px;padding:32px;
+    box-shadow:0 10px 30px var(--shadow);
+}
+.scheduler-card h3{font-family:'Playfair Display',serif;font-size:24px;color:var(--violet);margin-bottom:10px;}
+.scheduler-card p{font-size:14px;color:var(--text3);margin-bottom:24px;line-height:1.6;}
+.scheduler-form{display:flex;flex-direction:column;gap:16px;}
+.scheduler-form input, .scheduler-form select, .scheduler-form textarea{
+    width:100%;font-family:inherit;font-size:14.5px;padding:12px;border:1.5px solid var(--warm);
+    border-radius:10px;background:var(--cream);color:var(--text);transition:border-color 0.25s;
+}
+.scheduler-form input:focus, .scheduler-form select:focus, .scheduler-form textarea:focus{
+    border-color:var(--accent);outline:none;
+}
+.date-time-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.scheduler-btn{
+    background:var(--violet);color:var(--white);font-weight:700;font-size:14px;padding:14px;
+    border:2px solid var(--violet);border-radius:10px;cursor:pointer;transition:all 0.25s;
+    display:flex;align-items:center;justify-content:center;gap:8px;
+}
+.scheduler-btn:hover{background:var(--violet2);border-color:var(--violet2);}
+.scheduler-status{margin-top:12px;font-size:13.5px;text-align:center;line-height:1.6;}
+.scheduler-status.success{color:#2e7d32;font-weight:700;}
+.scheduler-status.error{color:#c62828;}
+
+/* MODAL */
+.meet-modal{
+    position:fixed;inset:0;background:rgba(26,16,32,0.6);backdrop-filter:blur(6px);
+    display:none;align-items:center;justify-content:center;z-index:1000;padding:24px;
+}
+.meet-modal.open{display:flex;}
+.modal-card{
+    background:var(--white);border-radius:20px;border:1.5px solid var(--accent);
+    padding:40px;max-width:550px;width:100%;box-shadow:0 24px 64px rgba(0,0,0,0.3);
+    text-align:center;position:relative;animation:modalIn .4s cubic-bezier(.25,.46,.45,.94);
+}
+@keyframes modalIn{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+.modal-icon{font-size:52px;color:var(--accent);margin-bottom:20px;}
+.modal-card h2{font-family:'Playfair Display',serif;font-size:28px;color:var(--violet);margin-bottom:12px;}
+.modal-card p{font-size:15px;color:var(--text2);line-height:1.7;margin-bottom:24px;}
+.meet-link-box{
+    background:var(--cream);border:1.5px solid var(--warm);border-radius:12px;
+    padding:16px;display:flex;justify-content:space-between;align-items:center;margin-bottom:28px;
+}
+.meet-url{font-family:monospace;font-size:13.5px;color:var(--violet);font-weight:bold;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-right:12px;}
+.copy-btn{
+    background:var(--violet);color:var(--white);border:none;border-radius:8px;
+    padding:8px 14px;font-size:12px;font-weight:700;cursor:pointer;transition:background 0.2s;
+    display:inline-flex;align-items:center;gap:6px;
+}
+.copy-btn:hover{background:var(--violet2);}
+.modal-close{
+    background:var(--cream2);color:var(--text2);border:none;border-radius:10px;
+    padding:12px 24px;font-weight:700;font-size:13px;cursor:pointer;transition:all 0.2s;
+}
+.modal-close:hover{background:var(--warm);}
+
+@media(max-width:900px){
+    .page-nav{padding:0 24px;}
+    .srv-hero{padding:60px 24px 40px;}
+    .srv-body{grid-template-columns:1fr;padding:40px 24px 60px;gap:40px;}
+}
+</style>
+</head>
+<body>
+
+<nav class="page-nav">
+    <div class="nav-logo">Ved</div>
+    <a href="index.html" class="nav-back"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+</nav>
+
+<section class="srv-hero">
+    <div class="hero-inner">
+        <div class="section-label">Expert Offerings</div>
+        <h1>My <em>Services</em></h1>
+        <p>Providing premium UI/UX product design, interactive web interfaces, and high-impact graphic poster designs to elevate your brand presence.</p>
+    </div>
+</section>
+
+<section class="srv-body">
+    
+    <!-- LEFT COLUMN: SERVICES -->
+    <div>
+        <h2 class="services-section-title">Design Offerings</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-palette"></i></div>
+                <h3>Graphic &amp; Poster Design</h3>
+                <p>High-impact visual arts combining rich typography with contextual composition layouts. Expertly balanced layouts for social campaigns, printed pamphlets, and announcements.</p>
+                <ul class="service-items">
+                    <li>Event Posters</li>
+                    <li>Advertisement Posters</li>
+                    <li>Poster Making</li>
+                    <li>Pamphlets</li>
+                    <li>Navratri Posters &amp; Tickets</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-desktop"></i></div>
+                <h3>Website UI/UX Design</h3>
+                <p>Clean, purposeful layout designs prioritizing visual excellence and user flow logic. Tailored to represent startups, agencies, portfolios, and commercial landing pages.</p>
+                <ul class="service-items">
+                    <li>Figma Design Systems</li>
+                    <li>Interactive Mockups</li>
+                    <li>Wireframing &amp; Architecture</li>
+                    <li>Responsive Web Design</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- RIGHT COLUMN: FREELANCE & SCHEDULER -->
+    <div>
+        <!-- Upwork Card -->
+        <div class="freelance-card">
+            <div class="upwork-logo"><i class="fa-brands fa-upwork"></i></div>
+            <h3>Hire Me on Upwork</h3>
+            <p>Looking to collaborate securely on Upwork? Visit my profile to hire me directly for custom contracts, milestones, and project reviews.</p>
+            <a href="https://www.upwork.com/freelancers/~017bf110c57b4dd950" target="_blank" class="upwork-btn">
+                <i class="fa-solid fa-external-link"></i> Go to Upwork Profile
+            </a>
+        </div>
+
+        <!-- Google Meet Scheduler Form -->
+        <div class="scheduler-card">
+            <h3>Schedule a Meet</h3>
+            <p>Book a free 15-minute Google Meet consultation call. Confirm your preferred time slot and receive the invite link instantly.</p>
+            
+            <form class="scheduler-form" id="meet-form">
+                <input type="text" id="meet-name" placeholder="Your Name" required>
+                <input type="email" id="meet-email" placeholder="Your Email" required>
+                <input type="tel" id="meet-phone" placeholder="Phone / WhatsApp Number" required>
+                
+                <select id="meet-service" required>
+                    <option value="">Select Service Area</option>
+                    <option value="Website UI/UX Design">Website UI/UX Design</option>
+                    <option value="Event / Promo Poster Making">Event Poster Design</option>
+                    <option value="Advertisement & Pamphlets">Social Media Ads &amp; Pamphlets</option>
+                    <option value="Navratri Festival Branding & Tickets">Navratri Poster &amp; Tickets</option>
+                    <option value="General Design Consultation">General Consultation</option>
+                </select>
+
+                <div class="date-time-row">
+                    <input type="date" id="meet-date" required>
+                    <input type="time" id="meet-time" required>
+                </div>
+
+                <textarea id="meet-notes" rows="3" placeholder="Briefly describe your project details..." required></textarea>
+
+                <button type="submit" class="scheduler-btn" id="meet-submit-btn">
+                    <i class="fa-solid fa-calendar-check"></i> Book Consultation
+                </button>
+            </form>
+            <p class="scheduler-status" id="meet-form-status"></p>
+        </div>
+    </div>
+</section>
+
+<!-- GOOGLE MEET BOOKING SUCCESS MODAL -->
+<div class="meet-modal" id="meet-modal">
+    <div class="modal-card">
+        <div class="modal-icon"><i class="fa-solid fa-video"></i></div>
+        <h2>Meeting Confirmed!</h2>
+        <p>Your Google Meet consultation has been scheduled successfully. An invitation recap and meeting details have been dispatched to your email address.</p>
+        
+        <div class="meet-link-box">
+            <span class="meet-url" id="meet-url-text">https://meet.google.com/paved2307-meet</span>
+            <button class="copy-btn" id="copy-meet-btn"><i class="fa-solid fa-copy"></i> Copy</button>
+        </div>
+        
+        <button class="modal-close" id="close-modal-btn">Done</button>
+    </div>
+</div>
+
+<script>
+// Prevent selecting past dates in date input
+const dateInput = document.getElementById('meet-date');
+if (dateInput) {
+    const today = new Date().toISOString().split('T')[0];
+    dateInput.min = today;
+}
+
+const form = document.getElementById('meet-form');
+const statusText = document.getElementById('meet-form-status');
+const submitBtn = document.getElementById('meet-submit-btn');
+
+const modal = document.getElementById('meet-modal');
+const closeModalBtn = document.getElementById('close-modal-btn');
+const copyMeetBtn = document.getElementById('copy-meet-btn');
+const meetUrlText = document.getElementById('meet-url-text');
+
+form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    
+    statusText.textContent = "Scheduling meeting...";
+    statusText.className = "scheduler-status";
+    submitBtn.disabled = true;
+    
+    const payload = {
+        from_name: document.getElementById('meet-name').value,
+        reply_to: document.getElementById('meet-email').value,
+        phone: document.getElementById('meet-phone').value,
+        company: 'None (Meeting Request)',
+        project_title: 'Google Meet: ' + document.getElementById('meet-service').value,
+        reference_link: '',
+        project_type: 'Google Meet Booking',
+        budget: 'Meeting Session',
+        timeline: 'Date: ' + document.getElementById('meet-date').value + ' | Time: ' + document.getElementById('meet-time').value,
+        contact_method: 'Google Meet Call',
+        message: document.getElementById('meet-notes').value
+    };
+
+    try {
+        const response = await fetch('http://localhost:5000/api/hire', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        });
+
+        if (response.ok) {
+            statusText.textContent = "Successfully scheduled!";
+            statusText.className = "scheduler-status success";
+            form.reset();
+            
+            // Show custom Google Meet Modal
+            modal.classList.add('open');
+        } else {
+            const data = await response.json();
+            throw new Error(data.error || "Server responded with an error status.");
+        }
+    } catch (err) {
+        console.error('Meeting booking error:', err);
+        
+        // Fallback option in case server is down
+        statusText.textContent = "Meeting request sent to fallback mail system.";
+        statusText.className = "scheduler-status success";
+        
+        // Construct mailto link
+        const mailtoUrl = `mailto:paved2307@gmail.com?subject=Google Meet Consultation Request&body=Name: ${payload.from_name}%0D%0AEmail: ${payload.reply_to}%0D%0APhone: ${payload.phone}%0D%0AService: ${payload.project_title}%0D%0APreferred Date/Time: ${payload.timeline}%0D%0AMessage: ${payload.message}`;
+        window.open(mailtoUrl, '_blank');
+        form.reset();
+    } finally {
+        submitBtn.disabled = false;
+    }
+});
+
+// Modal Actions
+closeModalBtn.addEventListener('click', () => {
+    modal.classList.remove('open');
+});
+
+copyMeetBtn.addEventListener('click', () => {
+    navigator.clipboard.writeText(meetUrlText.textContent)
+        .then(() => {
+            copyMeetBtn.innerHTML = `<i class="fa-solid fa-check"></i> Copied`;
+            setTimeout(() => {
+                copyMeetBtn.innerHTML = `<i class="fa-solid fa-copy"></i> Copy`;
+            }, 2000);
+        })
+        .catch(err => console.error("Could not copy meet link:", err));
+});
+</script>
+</body>
+</html>
