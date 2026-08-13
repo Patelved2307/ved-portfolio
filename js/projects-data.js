@@ -50,7 +50,7 @@ const PROJECTS = [
     tag: "UI/UX Design · Mobile App",
     icon: "fa-solid fa-heart-pulse",
     accent: ["#D4A853", "#5C3370"],
-    image: "Logo (2).png",
+    image: "assets/images/Logo (2).png",
     summary: "A user-friendly health monitoring app for elder care with intuitive navigation, real-time health tracking, and emergency alerts.",
     overview: "Vrudhseva is an elder-care platform built around a hard design constraint: many of its users — elderly people, often living alone — will never reliably press a button, remember a password, or navigate a menu. So the app had to be designed for passive use first, active use second.",
     problem: "Most health and safety apps assume an engaged, tech-comfortable user who checks in daily. Elderly users frequently don't fit that assumption, which means critical signals (a fall, a missed dose, a mood change) can go unnoticed until it's too late.",
@@ -88,7 +88,7 @@ const PROJECTS = [
     tag: "UI/UX Design · Web",
     icon: "fa-solid fa-plane",
     accent: ["#0E7490", "#3A2147"],
-    image: "logo 2.png",
+    image: "assets/images/logo 2.png",
     summary: "A responsive travel booking website with seamless UX — intuitive search, personalised recommendations, and a streamlined booking flow.",
     overview: "TravelX is a holiday trip planning and booking experience designed around the three moments that usually cause travel-site drop-off: search, comparison, and checkout.",
     problem: "Travel booking sites tend to overload users with filters and options before they've even decided where they're going, which increases decision fatigue and abandonment.",
@@ -107,7 +107,7 @@ const PROJECTS = [
     tag: "App Design · Mobile",
     icon: "fa-solid fa-eye",
     accent: ["#5C3370", "#D4A853"],
-    image: "Trinetra.jpg",
+    image: "assets/images/Trinetra.jpg",
     summary: "A misinformation detection app with clear visual cues, educational resources, and real-time fact-checking features.",
     overview: "Trinetra ('three eyes') is a concept for a misinformation-detection app designed to help users evaluate content credibility without feeling accused or lectured.",
     problem: "Most fact-checking tools either bury findings in dense reports or use alarmist red banners that make users defensive rather than curious — reducing how often the tool is actually trusted or used.",
@@ -126,7 +126,7 @@ const PROJECTS = [
     tag: "UI/UX Design · Mobile App",
     icon: "fa-solid fa-utensils",
     accent: ["#D4A853", "#7A6585"],
-    image: null,
+    image: "assets/images/foodie.png",
     summary: "A food delivery app concept focused on fast browsing, clear order tracking, and a frictionless checkout experience.",
     overview: "Foodie is a UI/UX practice project exploring the food-delivery category — a deliberately competitive, well-trodden space chosen specifically to sharpen fundamentals against a high visual bar.",
     problem: "Food delivery apps live or die on speed: how fast a hungry user can go from opening the app to placing an order. Every extra tap is a chance to lose them.",
@@ -135,7 +135,7 @@ const PROJECTS = [
     role: "UI/UX Design",
     tools: "Figma",
     type: "UI/UX Practice Project",
-    actions: []
+    actions: [{ label: "View Figma Design", href: "https://www.figma.com/design/kPbiduIeX2Ly0YAIiWadUD/food-dilevery-app?t=z9YSO4fCQnGhEoB2-1", icon: "fa-brands fa-figma" }]
   },
   {
     id: "gadgetkart",
@@ -157,6 +157,25 @@ const PROJECTS = [
     actions: []
   },
   {
+    id: "shreeradhe",
+    title: "ShreeRadhe Mobile Accessories",
+    category: "UI/UX",
+    status: "Concept",
+    tag: "Landing Page · E-Commerce",
+    icon: "fa-solid fa-mobile-screen-button",
+    accent: ["#D4A853", "#3A2147"],
+    image: null,
+    summary: "A premium mobile accessories e-commerce landing page design designed to drive conversions and showcase products.",
+    overview: "ShreeRadhe Mobile Accessories is an e-commerce landing page design built to streamline the product browsing and shopping experience for mobile screen protectors, cases, chargers, and other phone peripherals.",
+    problem: "E-commerce storefronts for accessories often suffer from poor visual hierarchy, cluttering the screen with text specs instead of clean product-first images that users can easily filter.",
+    approach: "I designed a structured grid showcasing peripheral categories and bestsellers above the fold. Visual focus is placed on clear category cards and simple filtering options to reduce search friction and improve checkout conversions.",
+    outcome: "A conversion-optimized desktop and mobile landing page design ready for backend integration.",
+    role: "UI/UX Design",
+    tools: "Figma",
+    type: "UI/UX Practice Project",
+    actions: [{ label: "View Figma Design", href: "https://www.figma.com/design/5hc4McHkpnvqVSZ7VWSktg/ShreeRadhe-Mobile-Acessories?t=z9YSO4fCQnGhEoB2-1", icon: "fa-brands fa-figma" }]
+  },
+  {
     id: "bakery",
     title: "Simple Bakery — Landing Page",
     category: "UI/UX",
@@ -164,7 +183,7 @@ const PROJECTS = [
     tag: "UI/UX Design · Web",
     icon: "fa-solid fa-bread-slice",
     accent: ["#E8C47A", "#5C3370"],
-    image: null,
+    image: "assets/images/bakery.png",
     summary: "A warm, inviting landing page for a bakery brand, built to showcase products and drive orders.",
     overview: "A landing page concept for a bakery brand, designed to feel handcrafted and warm rather than templated — the opposite instinct of most e-commerce UI work.",
     problem: "Small food brands often end up with landing pages that look identical to every other Shopify template, losing the personality that made the brand appealing in the first place.",
@@ -173,7 +192,26 @@ const PROJECTS = [
     role: "UI/UX Design",
     tools: "Figma",
     type: "UI/UX Practice Project",
-    actions: []
+    actions: [{ label: "View Figma Design", href: "https://www.figma.com/design/JyfHxNSiC5hgQBJ16PopI9/Simple-bakery-Landing-page?node-id=0-1&t=z9YSO4fCQnGhEoB2-1", icon: "fa-brands fa-figma" }]
+  },
+  {
+    id: "fitness",
+    title: "Fitness App",
+    category: "UI/UX",
+    status: "Concept",
+    tag: "UI/UX Design · Mobile App",
+    icon: "fa-solid fa-dumbbell",
+    accent: ["#F97316", "#3A2147"],
+    image: "assets/images/fitness.jpg",
+    summary: "A sleek, orange-themed fitness and workout tracking mobile app with personalized schedules, goals, and metric tracking.",
+    overview: "Fitness App is a modern mobile UI/UX concept focused on personal health, workout categorization, and user progression monitoring.",
+    problem: "Fitness trackers are often overloaded with complex stats that overwhelm casual users, leading to quick abandonment. The goal was to build a clean, encouraging interface with clear visual progression.",
+    approach: "I designed a high-contrast dashboard with card-based workout menus, structured progress bars, and calendar integrations. The color palette focuses on motivating oranges and greens, with large touch targets for easy use during active workouts.",
+    outcome: "A high-fidelity interactive Figma prototype demonstrating user registration, workout selection, and a personal profile progress dashboard.",
+    role: "UI/UX Design",
+    tools: "Figma",
+    type: "UI/UX Practice Project",
+    actions: [{ label: "View Figma Design", href: "https://www.figma.com/design/MXYmlKumXn4NLR6eIs9SPd/fitness-app?t=z9YSO4fCQnGhEoB2-1", icon: "fa-brands fa-figma" }]
   },
   {
     id: "pizzahunt",
@@ -202,7 +240,7 @@ const PROJECTS = [
     tag: "Frontend Development · Web",
     icon: "fa-solid fa-code",
     accent: ["#D4A853", "#0a0706"],
-    image: "uiux.jpg",
+    image: "assets/images/portfolio-design.png",
     summary: "This portfolio — designed and built from scratch with a responsive layout, smooth animations, and an editorial aesthetic.",
     overview: "The site you're on right now — designed and hand-built rather than assembled from a template, as a demonstration of both UI/UX and frontend craft together.",
     problem: "Most personal portfolios read as either a resume in disguise or a generic template with swapped-in colours. The goal was something that feels considered — an editorial, gallery-like presentation of the work itself.",
@@ -211,7 +249,7 @@ const PROJECTS = [
     role: "UI/UX Design & Frontend Development",
     tools: "HTML, CSS, JavaScript",
     type: "Frontend · Live Project",
-    actions: []
+    actions: [{ label: "View Figma Design", href: "https://www.figma.com/design/xSVhUwprunlCXPzMKjKFhX/Portfolio?t=z9YSO4fCQnGhEoB2-1", icon: "fa-brands fa-figma" }]
   }
 ];
 

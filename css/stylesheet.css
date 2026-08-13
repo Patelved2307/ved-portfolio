@@ -31,6 +31,8 @@
 
 html { scroll-behavior:smooth; overflow-x:hidden; }
 
+a { text-decoration: none; color: inherit; }
+
 body {
     font-family: var(--font-body);
     background: var(--dark);

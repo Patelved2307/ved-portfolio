@@ -392,6 +392,10 @@
                 <form class="hire-form" id="hire-form">
                     <input type="text" id="hire-name" placeholder="Your Name" required>
                     <input type="email" id="hire-email" placeholder="Your Email" required>
+                    <input type="tel" id="hire-phone" placeholder="Phone / WhatsApp Number" required>
+                    <input type="text" id="hire-company" placeholder="Company / Org Name (Optional)">
+                    <input type="text" id="hire-project-title" placeholder="Project Title / Name" required>
+                    <input type="url" id="hire-reference" placeholder="Reference / Website Link (Optional)">
                     <select id="hire-project-type" required>
                         <option value="">Project Type</option>
                         <option>UI/UX Design</option>
@@ -404,6 +408,18 @@
                         <option>₹10,000 - ₹30,000</option>
                         <option>₹30,000+</option>
                     </select>
+                    <select id="hire-timeline" required>
+                        <option value="">Expected Timeline</option>
+                        <option>Urgent (Less than 2 weeks)</option>
+                        <option>Standard (1-2 months)</option>
+                        <option>Flexible (2+ months)</option>
+                    </select>
+                    <select id="hire-contact-method" required>
+                        <option value="">Preferred Contact Method</option>
+                        <option>Email</option>
+                        <option>WhatsApp / Call</option>
+                        <option>LinkedIn</option>
+                    </select>
                     <textarea id="hire-details" placeholder="Project details..." required></textarea>
                     <button type="submit" id="send-request-btn">Send Request <i class="fa-solid fa-paper-plane"></i></button>
                 </form>
@@ -414,6 +430,6 @@
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script src="site-forms.js"></script>
+    <script src="js/site-forms.js"></script>
 </body>
 </html>

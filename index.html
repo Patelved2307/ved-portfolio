@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patel Ved — UI/UX Designer & Frontend Developer</title>
-    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="css/stylesheet.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
@@ -55,13 +55,13 @@
                 <a href="https://www.behance.net/patelved6" target="_blank"><i class="fab fa-behance"></i></a>
             </div>
             <div class="button">
-                <a href="Resume%20-%20Patel%20Ved.pdf" download="Resume-Patel-Ved.pdf" id="resume-btn"><i class="fa-solid fa-download"></i> Download Resume</a>
+                <a href="assets/docs/Resume%20-%20Patel%20Ved.pdf" download="Resume-Patel-Ved.pdf" id="resume-btn"><i class="fa-solid fa-download"></i> Download Resume</a>
                 <a href="hire-me.html" id="hire-me"><i class="fa-solid fa-briefcase"></i> Hire Me</a>
             </div>
         </div>
         <div class="image">
             <div class="image-frame" id="tilt-frame">
-                <img src="my pic.jpeg" alt="Patel Ved">
+                <img src="assets/images/my pic.jpeg" alt="Patel Ved">
             </div>
             <div class="image-stats">
                 <div class="image-stats-num" data-count="1" data-suffix="+">0</div>
@@ -88,7 +88,7 @@
     <div class="about-container">
         <div class="about-image-col reveal">
             <div class="about-img-wrap">
-                <div class="about-img-inner"><img src="my pic.jpeg" alt="Patel Ved"></div>
+                <div class="about-img-inner"><img src="assets/images/my pic.jpeg" alt="Patel Ved"></div>
                 <div class="about-img-tag">UI/UX Designer</div>
             </div>
         </div>
@@ -98,7 +98,7 @@
             <p class="reveal reveal-delay-2">I'm a passionate UI/UX Designer who enjoys creating intuitive and user-centered digital experiences that solve real-world problems. I focus on understanding user needs, behaviors, and challenges before translating ideas into thoughtful design solutions.</p>
             <p class="reveal reveal-delay-2">My design process includes user research, wireframing, prototyping, and visual design — ensuring clarity, usability, and consistency throughout every experience. Good design goes beyond aesthetics; it creates meaningful, accessible interactions.</p>
             <div class="about-stats reveal reveal-delay-3">
-                <div class="about-stat"><div class="about-stat-num" data-count="11" data-suffix="+">0</div><div class="about-stat-label">Projects</div></div>
+                <div class="about-stat"><div class="about-stat-num" data-count="13" data-suffix="+">0</div><div class="about-stat-label">Projects</div></div>
                 <div class="about-stat"><div class="about-stat-num" data-count="1" data-suffix="+">0</div><div class="about-stat-label">Years Exp</div></div>
                 <div class="about-stat"><div class="about-stat-num" data-count="12" data-suffix="+">0</div><div class="about-stat-label">Skills</div></div>
             </div>
@@ -120,38 +120,38 @@
             </div>
         </div>
         <div class="project-grid">
-            <article class="project-card reveal">
-                <div class="project-card-img"><img src="Logo (2).png" alt="Vrudhseva"></div>
+            <a href="project-detail.html?id=vrudhseva" class="project-card reveal">
+                <div class="project-card-img"><img src="assets/images/Logo (2).png" alt="Vrudhseva"></div>
                 <div class="project-card-body">
                     <span class="project-tag">UI/UX Design</span>
                     <h3>Vrudhseva — Elder Care Health App</h3>
                     <p>Designed a user-friendly health monitoring app for elder care with intuitive navigation, real-time health tracking, medication reminders, and emergency alerts.</p>
                 </div>
-            </article>
-            <article class="project-card reveal reveal-delay-1">
-                <div class="project-card-img"><img src="logo 2.png" alt="TravelX"></div>
+            </a>
+            <a href="project-detail.html?id=travelx" class="project-card reveal reveal-delay-1">
+                <div class="project-card-img"><img src="assets/images/logo 2.png" alt="TravelX"></div>
                 <div class="project-card-body">
                     <span class="project-tag">Web Design</span>
                     <h3>TravelX — Travel Booking Website</h3>
                     <p>Created a responsive travel booking website with seamless UX — intuitive search, personalised recommendations, and a streamlined booking process.</p>
                 </div>
-            </article>
-            <article class="project-card reveal reveal-delay-2">
-                <div class="project-card-img"><img src="Trinetra.jpg" alt="Trinetra"></div>
+            </a>
+            <a href="project-detail.html?id=trinetra" class="project-card reveal reveal-delay-2">
+                <div class="project-card-img"><img src="assets/images/Trinetra.jpg" alt="Trinetra"></div>
                 <div class="project-card-body">
                     <span class="project-tag">App Design</span>
                     <h3>Trinetra — Misinformation Detection</h3>
                     <p>Developed a misinformation detection app with clear visual cues, educational resources, and real-time fact-checking features to help users identify false content.</p>
                 </div>
-            </article>
-            <article class="project-card reveal reveal-delay-3">
+            </a>
+            <a href="project-detail.html?id=vikranth" class="project-card reveal reveal-delay-3">
                 <div class="project-card-img project-card-img-icon"><i class="fa-solid fa-satellite"></i></div>
                 <div class="project-card-body">
                     <span class="project-tag">ISRO BAH 2026</span>
                     <h3>Vikranth — Urban Heat Island Mitigation</h3>
                     <p>Built for the ISRO Bharatiya Antariksh Hackathon 2026 — a machine learning pipeline analysing satellite data to map and mitigate urban heat islands across Ahmedabad.</p>
                 </div>
-            </article>
+            </a>
             <article class="project-card project-card-cta reveal reveal-delay-4">
                 <div class="project-card-body">
                     <span class="project-tag">All Projects</span>
@@ -367,8 +367,8 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script src="site-forms.js"></script>
-<script src="portfolio.js"></script>
+<script src="js/site-forms.js"></script>
+<script src="js/portfolio.js"></script>
 <script>
 // Custom Cursor
 const cursorDot = document.getElementById('cursor-dot');

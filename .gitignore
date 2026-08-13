@@ -1,0 +1,13 @@
+# Dependencies
+/backend/node_modules/
+
+# Environment Secrets
+/backend/.env
+
+# Local Databases (SQLite)
+/backend/*.db
+
+# Editor Configurations
+/.vscode/
+.DS_Store
+Thumbs.db

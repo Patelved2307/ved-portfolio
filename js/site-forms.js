@@ -11,6 +11,8 @@
    ============================================================ */
 
 const FORM_CONFIG = {
+  // Local or deployed backend API URL
+  API_BASE_URL: "http://localhost:5000",
   // From https://dashboard.emailjs.com  (Account → General)
   EMAILJS_PUBLIC_KEY: "YOUR_EMAILJS_PUBLIC_KEY",
   // From https://dashboard.emailjs.com  (Email Services)
@@ -56,7 +58,7 @@ async function logToSheet(payload) {
   try {
     await fetch(FORM_CONFIG.SHEET_WEBHOOK_URL, {
       method: "POST",
-      mode: "no-cors", // Apps Script web apps don't return CORS headers; fire-and-forget
+      mode: "no-cors",
       headers: { "Content-Type": "text/plain;charset=utf-8" },
       body: JSON.stringify(payload),
     });
@@ -66,10 +68,10 @@ async function logToSheet(payload) {
 }
 
 /**
- * Wires a form to: EmailJS (direct email) + Google Sheet (log row),
- * with a graceful mailto: fallback if either isn't configured yet.
+ * Wires a form to: Node.js Backend API -> EmailJS (direct email) -> Google Sheet (log row),
+ * with a graceful mailto: fallback if services are offline.
  */
-function wirePortfolioForm({ formEl, statusEl, buttonEl, formType, getPayload, subject }) {
+function wirePortfolioForm({ formEl, statusEl, buttonEl, formType, getPayload, subject, apiEndpoint }) {
   if (!formEl) return;
 
   formEl.addEventListener("submit", async function (e) {
@@ -91,26 +93,49 @@ function wirePortfolioForm({ formEl, statusEl, buttonEl, formType, getPayload, s
     }
     setStatus(statusEl, "Sending your message…", "sending");
 
-    // Always log to the sheet in parallel (fire-and-forget, no-cors)
+    // Always log to sheet in parallel
     logToSheet(payload);
 
-    if (formsConfigured() && window.emailjs) {
-      try {
-        await emailjs.send(FORM_CONFIG.EMAILJS_SERVICE_ID, FORM_CONFIG.EMAILJS_TEMPLATE_ID, payload);
-        setStatus(statusEl, "Thanks! Your message has been sent — I'll reply soon.", "success");
+    let sentSuccessfully = false;
+
+    // 1. Try Node.js Express Backend
+    try {
+      const response = await fetch(`${FORM_CONFIG.API_BASE_URL}${apiEndpoint}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (response.ok) {
+        setStatus(statusEl, "Thanks! Your request has been sent — I'll reply soon.", "success");
         formEl.reset();
-      } catch (err) {
-        console.error("EmailJS send failed:", err);
-        const mailto = buildMailtoFallback(subject, Object.entries(payload).map(([k, v]) => `${k}: ${v}`));
-        setStatus(statusEl, "Direct send failed — opening your email app instead.", "error");
-        window.location.href = mailto;
+        sentSuccessfully = true;
+      } else {
+        console.warn("Backend API response was not OK, trying EmailJS fallback...");
       }
-    } else {
-      // Not configured yet — fall back to the visitor's own email app so nothing is lost
+    } catch (apiErr) {
+      console.warn("Backend server connection failed, trying EmailJS fallback...", apiErr);
+    }
+
+    // 2. Fall back to EmailJS (if configured client-side)
+    if (!sentSuccessfully) {
+      if (formsConfigured() && window.emailjs) {
+        try {
+          await emailjs.send(FORM_CONFIG.EMAILJS_SERVICE_ID, FORM_CONFIG.EMAILJS_TEMPLATE_ID, payload);
+          setStatus(statusEl, "Thanks! Your message has been sent — I'll reply soon.", "success");
+          formEl.reset();
+          sentSuccessfully = true;
+        } catch (err) {
+          console.error("EmailJS fallback failed:", err);
+        }
+      }
+    }
+
+    // 3. Final mailto fallback if all APIs are offline
+    if (!sentSuccessfully) {
       const mailto = buildMailtoFallback(subject, Object.entries(payload).map(([k, v]) => `${k}: ${v}`));
-      setStatus(statusEl, "Opening your email app to send this to me directly…", "sending");
+      setStatus(statusEl, "Direct send failed — opening your email app instead.", "error");
       window.location.href = mailto;
-      setTimeout(() => setStatus(statusEl, "If nothing opened, email me directly at " + FORM_CONFIG.TO_EMAIL, ""), 1200);
     }
 
     if (buttonEl) {
@@ -127,6 +152,7 @@ document.addEventListener("DOMContentLoaded", function () {
     statusEl: document.getElementById("connect-form-status"),
     buttonEl: document.getElementById("connect-submit-btn"),
     formType: "Get In Touch — Portfolio",
+    apiEndpoint: "/api/connect",
     subject: "New portfolio message",
     getPayload: () => ({
       from_name: document.getElementById("connect-name").value.trim(),
@@ -141,12 +167,19 @@ document.addEventListener("DOMContentLoaded", function () {
     statusEl: document.getElementById("hire-form-status"),
     buttonEl: document.getElementById("send-request-btn"),
     formType: "Project Request — Hire Me",
+    apiEndpoint: "/api/hire",
     subject: "New project request",
     getPayload: () => ({
       from_name: document.getElementById("hire-name").value.trim(),
       reply_to: document.getElementById("hire-email").value.trim(),
+      phone: document.getElementById("hire-phone").value.trim(),
+      company: document.getElementById("hire-company").value.trim(),
+      project_title: document.getElementById("hire-project-title").value.trim(),
+      reference_link: document.getElementById("hire-reference").value.trim(),
       project_type: document.getElementById("hire-project-type").value,
       budget: document.getElementById("hire-budget").value,
+      timeline: document.getElementById("hire-timeline").value,
+      contact_method: document.getElementById("hire-contact-method").value,
       message: document.getElementById("hire-details").value.trim(),
     }),
   });
