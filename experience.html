@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Work Experience — Patel Ved</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600;700&display=swap');
+:root{--cream:#FAF7F2;--cream2:#F2EDE4;--warm:#EDE5D8;--violet:#3A2147;--violet2:#5C3370;--accent:#D4A853;--accent2:#E8C47A;--text:#1A1020;--text2:#4A3555;--text3:#7A6585;--white:#FFFFFF;--shadow:rgba(58,33,71,0.10);--shadow2:rgba(58,33,71,0.20);}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html,body{overflow-x:hidden;width:100%;}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);}
+a{text-decoration:none;}
+
+.page-nav{position:sticky;top:0;z-index:100;background:rgba(250,247,242,0.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(58,33,71,0.09);display:flex;justify-content:space-between;align-items:center;padding:0 52px;height:66px;box-shadow:0 2px 16px var(--shadow);}
+.nav-logo{font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:var(--violet);}
+.nav-logo::after{content:'.';color:var(--accent);}
+.nav-back{display:inline-flex;align-items:center;gap:8px;background:var(--violet);color:var(--white);border:2px solid var(--violet);border-radius:10px;padding:9px 18px;font-size:14px;font-weight:600;transition:all 0.25s;}
+.nav-back:hover{background:var(--violet2);border-color:var(--violet2);}
+
+.exp-hero{
+    padding:80px 52px 56px;
+    background:radial-gradient(ellipse 55% 50% at 85% 40%, rgba(212,168,83,0.13) 0%, transparent 65%), var(--cream);
+    position:relative;overflow:hidden;
+}
+.exp-hero::before{content:'CAREER';position:absolute;top:16px;left:-10px;font-family:'Playfair Display',serif;font-size:150px;font-weight:900;color:rgba(58,33,71,0.04);pointer-events:none;user-select:none;}
+.hero-inner{max-width:900px;margin:0 auto;position:relative;z-index:1;}
+
+.section-label{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);margin-bottom:14px;}
+.section-label::before{content:'';width:28px;height:2px;background:var(--accent);display:block;}
+
+.exp-hero h1{font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,60px);font-weight:900;color:var(--violet);line-height:1.1;margin-bottom:14px;}
+.exp-hero p{font-size:17px;color:var(--text2);line-height:1.7;max-width:600px;}
+
+.exp-body{padding:56px 52px 90px;max-width:900px;margin:0 auto;}
+
+/* Timeline wrap */
+.timeline-wrap{position:relative;display:flex;flex-direction:column;gap:48px;}
+.timeline-wrap::before{
+    content:'';position:absolute;left:28px;top:8px;bottom:8px;
+    width:2px;background:linear-gradient(to bottom,var(--accent) 0%,var(--warm) 100%);
+}
+.timeline-item{position:relative;padding-left:72px;}
+.timeline-item::before{
+    content:'';position:absolute;left:22px;top:6px;
+    width:14px;height:14px;border-radius:50%;
+    background:var(--cream);border:3.5px solid var(--accent);
+    box-shadow:0 0 0 6px var(--cream);z-index:2;
+    transition:background .25s ease;
+}
+.timeline-item:hover::before{
+    background:var(--accent);
+}
+.item-header{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;margin-bottom:8px;}
+.item-header h2{font-family:'Playfair Display',serif;font-size:24px;color:var(--violet);line-height:1.2;}
+.item-company{font-size:14px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:1px;margin-top:6px;}
+.item-time{font-size:12px;font-weight:700;color:var(--text3);background:var(--cream2);border:1.5px solid var(--warm);padding:5px 12px;border-radius:99px;}
+.item-meta{font-size:14px;color:var(--text3);margin-bottom:18px;display:flex;gap:12px;flex-wrap:wrap;}
+.item-meta span{display:inline-flex;align-items:center;gap:6px;}
+.item-meta span i{color:var(--accent);}
+
+.item-bullets{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.item-bullets li{position:relative;padding-left:20px;font-size:15.5px;line-height:1.75;color:var(--text2);}
+.item-bullets li::before{content:'•';position:absolute;left:0;color:var(--accent);font-size:20px;line-height:1;}
+
+.item-card{background:var(--white);border:1.5px solid rgba(58,33,71,0.08);border-radius:16px;padding:32px;box-shadow:0 4px 20px var(--shadow);transition:transform 0.3s ease, box-shadow 0.3s ease;}
+.item-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px var(--shadow2);}
+
+@media(max-width:768px){
+    .page-nav{padding:0 24px;}
+    .exp-hero{padding:60px 24px 40px;}
+    .exp-body{padding:40px 24px 60px;}
+    .timeline-wrap::before{left:14px;}
+    .timeline-item{padding-left:40px;}
+    .timeline-item::before{left:8px;}
+    .item-header h2{font-size:20px;}
+}
+</style>
+</head>
+<body>
+
+<nav class="page-nav">
+    <div class="nav-logo">Ved</div>
+    <a href="index.html" class="nav-back"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+</nav>
+
+<section class="exp-hero">
+    <div class="hero-inner">
+        <div class="section-label">Professional Experience</div>
+        <h1>Work <em>Journey</em></h1>
+        <p>A timeline of my internships and graphic design engagements, showcasing hands-on experience in real-world environments.</p>
+    </div>
+</section>
+
+<section class="exp-body">
+    <div class="timeline-wrap">
+        <div class="timeline-item">
+            <div class="item-card">
+                <div class="item-header">
+                    <div>
+                        <h2>UI/UX Design Intern</h2>
+                        <div class="item-company">Unified Mentor Private Limited</div>
+                    </div>
+                    <span class="item-time">Nov 2025 – Jan 2026</span>
+                </div>
+                <div class="item-meta">
+                    <span><i class="fa-solid fa-location-dot"></i> Gurugram, Haryana, India (Remote)</span>
+                    <span><i class="fa-solid fa-calendar-day"></i> 3 Months</span>
+                </div>
+                <ul class="item-bullets">
+                    <li>Worked on real-world projects under professional mentorship, successfully completing all assigned projects on time.</li>
+                    <li>Actively involved in user research, wireframing, prototyping, and end-to-end UI design execution.</li>
+                    <li>Gained in-depth knowledge of UI principles, user psychology, and industry-standard design practices.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="item-card">
+                <div class="item-header">
+                    <div>
+                        <h2>Graphic Designer Intern</h2>
+                        <div class="item-company">InAmigos Foundation (IAF)</div>
+                    </div>
+                    <span class="item-time">Jan 2026</span>
+                </div>
+                <div class="item-meta">
+                    <span><i class="fa-solid fa-location-dot"></i> Remote</span>
+                    <span><i class="fa-solid fa-calendar-day"></i> 1 Month</span>
+                </div>
+                <ul class="item-bullets">
+                    <li>Designed promotional posters and handled reel editing for social media campaigns.</li>
+                    <li>Contributed creative visual content and layout assets to support the foundation's digital presence and outreach.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

@@ -448,6 +448,67 @@ nav a:hover,nav a.active{color:var(--gold);border-color:var(--border);background
 .form-status.error{color:#e88a8a}
 
 /* ============================================================
+   EXPERIENCE
+   ============================================================ */
+#experience{padding:120px 56px;background:var(--dark-1);position:relative}
+.experience-container{max-width:1100px;margin:0 auto}
+.experience-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:56px}
+.experience-timeline{display:flex;flex-direction:column;gap:36px;position:relative}
+.experience-timeline::before{
+    content:'';position:absolute;left:28px;top:8px;bottom:8px;
+    width:1.5px;background:linear-gradient(to bottom,var(--gold) 0%,var(--border-dim) 100%);
+}
+.exp-item{
+    position:relative;padding-left:72px;
+}
+.exp-item::before{
+    content:'';position:absolute;left:22px;top:6px;
+    width:13px;height:13px;border-radius:50%;
+    background:var(--dark-1);border:3px solid var(--gold);
+    box-shadow:0 0 0 6px var(--dark-1);z-index:2;
+    transition:background .25s ease;
+}
+.exp-item:hover::before{
+    background:var(--gold);
+}
+.exp-header{
+    display:flex;justify-content:space-between;align-items:flex-start;
+    flex-wrap:wrap;gap:14px;margin-bottom:8px;
+}
+.exp-header h3{
+    font-family:var(--font-display);font-size:22px;color:var(--cream);line-height:1.2;
+}
+.exp-company{
+    font-family:var(--font-mono);font-size:13px;color:var(--gold);
+    text-transform:uppercase;letter-spacing:1.5px;margin-top:6px;
+}
+.exp-time{
+    font-size:13px;font-family:var(--font-mono);color:var(--text-muted);
+    background:var(--dark-3);border:1px solid var(--border-dim);
+    padding:6px 14px;border-radius:99px;
+}
+.exp-meta{
+    font-size:14px;color:var(--text-muted);margin-bottom:16px;
+}
+.exp-bullets{
+    list-style:none;display:flex;flex-direction:column;gap:10px;
+}
+.exp-bullets li{
+    position:relative;padding-left:18px;font-size:14.5px;line-height:1.6;color:var(--text-body);
+}
+.exp-bullets li::before{
+    content:'•';position:absolute;left:0;color:var(--gold);font-size:18px;line-height:1;
+}
+
+@media(max-width:768px){
+    #experience{padding:80px 24px}
+    .experience-timeline::before{left:14px;}
+    .exp-item{padding-left:40px;}
+    .exp-item::before{left:8px;}
+    .exp-header h3{font-size:19px;}
+}
+
+/* ============================================================
    SKILLS
    ============================================================ */
 #skills{padding:120px 56px;background:var(--dark-2);position:relative}
