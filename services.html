@@ -3,129 +3,579 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Services Offered — Patel Ved</title>
+<title>Services &amp; Consultation — Patel Ved</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600;700&display=swap');
-:root{--cream:#FAF7F2;--cream2:#F2EDE4;--warm:#EDE5D8;--violet:#3A2147;--violet2:#5C3370;--accent:#D4A853;--accent2:#E8C47A;--text:#1A1020;--text2:#4A3555;--text3:#7A6585;--white:#FFFFFF;--shadow:rgba(58,33,71,0.10);--shadow2:rgba(58,33,71,0.20);}
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
-html,body{overflow-x:hidden;width:100%;}
-body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);}
-a{text-decoration:none;}
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@400;500;600;700&display=swap');
 
-.page-nav{position:sticky;top:0;z-index:100;background:rgba(250,247,242,0.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(58,33,71,0.09);display:flex;justify-content:space-between;align-items:center;padding:0 52px;height:66px;box-shadow:0 2px 16px var(--shadow);}
-.nav-logo{font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:var(--violet);}
-.nav-logo::after{content:'.';color:var(--accent);}
-.nav-back{display:inline-flex;align-items:center;gap:8px;background:var(--violet);color:var(--white);border:2px solid var(--violet);border-radius:10px;padding:9px 18px;font-size:14px;font-weight:600;transition:all 0.25s;}
-.nav-back:hover{background:var(--violet2);border-color:var(--violet2);}
+:root {
+    --cream:       #FAF7F2;
+    --cream2:      #F2EDE4;
+    --warm:        #EDE5D8;
+    --violet:      #3A2147;
+    --violet2:     #5C3370;
+    --accent:      #D4A853;
+    --accent2:     #E8C47A;
+    --text:        #1A1020;
+    --text2:       #4A3555;
+    --text3:       #7A6585;
+    --white:       #FFFFFF;
+    --shadow:      rgba(58,33,71,0.06);
+    --shadow2:     rgba(58,33,71,0.12);
+    --transition:  all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
 
-.srv-hero{
-    padding:80px 52px 56px;
-    background:radial-gradient(ellipse 55% 50% at 85% 40%, rgba(212,168,83,0.13) 0%, transparent 65%), var(--cream);
-    position:relative;overflow:hidden;
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-.srv-hero::before{content:'OFFERS';position:absolute;top:16px;left:-10px;font-family:'Playfair Display',serif;font-size:150px;font-weight:900;color:rgba(58,33,71,0.04);pointer-events:none;user-select:none;}
-.hero-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1;}
 
-.section-label{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);margin-bottom:14px;}
-.section-label::before{content:'';width:28px;height:2px;background:var(--accent);display:block;}
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    background: var(--cream);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    line-height: 1.6;
+}
 
-.srv-hero h1{font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,60px);font-weight:900;color:var(--violet);line-height:1.1;margin-bottom:14px;}
-.srv-hero p{font-size:17px;color:var(--text2);line-height:1.7;max-width:600px;}
+a { text-decoration: none; }
 
-.srv-body{padding:56px 52px 90px;max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr;gap:48px;}
+/* ---- Navigation Bar ---- */
+.page-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(250, 247, 242, 0.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(58, 33, 71, 0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 52px;
+    height: 70px;
+    box-shadow: 0 2px 20px var(--shadow);
+}
 
-/* SERVICES LIST */
-.services-section-title{font-family:'Playfair Display',serif;font-size:28px;color:var(--violet);margin-bottom:24px;border-bottom:1.5px solid var(--warm);padding-bottom:12px;}
-.services-grid{display:grid;grid-template-columns:1fr;gap:24px;margin-bottom:48px;}
-.service-card{
-    background:var(--white);border:1.5px solid rgba(58,33,71,0.08);border-radius:16px;padding:28px;
-    box-shadow:0 4px 20px var(--shadow);transition:transform 0.3s ease, box-shadow 0.3s ease;
+.nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 900;
+    color: var(--violet);
 }
-.service-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px var(--shadow2);}
-.service-icon{font-size:36px;color:var(--accent);margin-bottom:16px;}
-.service-card h3{font-family:'Playfair Display',serif;font-size:22px;color:var(--violet);margin-bottom:10px;}
-.service-card p{font-size:14.5px;color:var(--text2);line-height:1.65;margin-bottom:14px;}
-.service-items{list-style:none;display:flex;flex-wrap:wrap;gap:8px;}
-.service-items li{background:var(--cream);border:1.5px solid var(--warm);color:var(--text2);font-size:12px;font-weight:700;padding:5px 12px;border-radius:99px;}
 
-/* FREELANCE CARD */
-.freelance-card{
-    background:linear-gradient(135deg,#1f1625 0%,#0f0d0b 100%);border:1.5px solid var(--accent);border-radius:16px;padding:32px;
-    box-shadow:0 12px 32px var(--shadow2);color:var(--cream);margin-bottom:32px;text-align:center;
+.nav-logo::after {
+    content: '.';
+    color: var(--accent);
 }
-.upwork-logo{font-size:42px;color:#14a800;margin-bottom:14px;}
-.freelance-card h3{font-family:'Playfair Display',serif;font-size:24px;color:var(--white);margin-bottom:10px;}
-.freelance-card p{font-size:14px;color:#a89e90;line-height:1.6;margin-bottom:20px;}
-.upwork-btn{
-    display:inline-flex;align-items:center;gap:8px;background:#14a800;color:var(--white);
-    padding:12px 24px;border-radius:10px;font-weight:700;font-size:14px;border:2.5px solid #14a800;
-    transition:all 0.25s;
-}
-.upwork-btn:hover{background:transparent;color:#14a800;}
 
-/* MEETING SCHEDULER */
-.scheduler-card{
-    background:var(--white);border:1.5px solid rgba(58,33,71,0.08);border-radius:16px;padding:32px;
-    box-shadow:0 10px 30px var(--shadow);
+.nav-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--violet);
+    color: var(--white);
+    border: 2px solid var(--violet);
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 700;
+    transition: var(--transition);
 }
-.scheduler-card h3{font-family:'Playfair Display',serif;font-size:24px;color:var(--violet);margin-bottom:10px;}
-.scheduler-card p{font-size:14px;color:var(--text3);margin-bottom:24px;line-height:1.6;}
-.scheduler-form{display:flex;flex-direction:column;gap:16px;}
-.scheduler-form input, .scheduler-form select, .scheduler-form textarea{
-    width:100%;font-family:inherit;font-size:14.5px;padding:12px;border:1.5px solid var(--warm);
-    border-radius:10px;background:var(--cream);color:var(--text);transition:border-color 0.25s;
-}
-.scheduler-form input:focus, .scheduler-form select:focus, .scheduler-form textarea:focus{
-    border-color:var(--accent);outline:none;
-}
-.date-time-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
-.scheduler-btn{
-    background:var(--violet);color:var(--white);font-weight:700;font-size:14px;padding:14px;
-    border:2px solid var(--violet);border-radius:10px;cursor:pointer;transition:all 0.25s;
-    display:flex;align-items:center;justify-content:center;gap:8px;
-}
-.scheduler-btn:hover{background:var(--violet2);border-color:var(--violet2);}
-.scheduler-status{margin-top:12px;font-size:13.5px;text-align:center;line-height:1.6;}
-.scheduler-status.success{color:#2e7d32;font-weight:700;}
-.scheduler-status.error{color:#c62828;}
 
-/* MODAL */
-.meet-modal{
-    position:fixed;inset:0;background:rgba(26,16,32,0.6);backdrop-filter:blur(6px);
-    display:none;align-items:center;justify-content:center;z-index:1000;padding:24px;
+.nav-back:hover {
+    background: transparent;
+    color: var(--violet);
 }
-.meet-modal.open{display:flex;}
-.modal-card{
-    background:var(--white);border-radius:20px;border:1.5px solid var(--accent);
-    padding:40px;max-width:550px;width:100%;box-shadow:0 24px 64px rgba(0,0,0,0.3);
-    text-align:center;position:relative;animation:modalIn .4s cubic-bezier(.25,.46,.45,.94);
-}
-@keyframes modalIn{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
-.modal-icon{font-size:52px;color:var(--accent);margin-bottom:20px;}
-.modal-card h2{font-family:'Playfair Display',serif;font-size:28px;color:var(--violet);margin-bottom:12px;}
-.modal-card p{font-size:15px;color:var(--text2);line-height:1.7;margin-bottom:24px;}
-.meet-link-box{
-    background:var(--cream);border:1.5px solid var(--warm);border-radius:12px;
-    padding:16px;display:flex;justify-content:space-between;align-items:center;margin-bottom:28px;
-}
-.meet-url{font-family:monospace;font-size:13.5px;color:var(--violet);font-weight:bold;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-right:12px;}
-.copy-btn{
-    background:var(--violet);color:var(--white);border:none;border-radius:8px;
-    padding:8px 14px;font-size:12px;font-weight:700;cursor:pointer;transition:background 0.2s;
-    display:inline-flex;align-items:center;gap:6px;
-}
-.copy-btn:hover{background:var(--violet2);}
-.modal-close{
-    background:var(--cream2);color:var(--text2);border:none;border-radius:10px;
-    padding:12px 24px;font-weight:700;font-size:13px;cursor:pointer;transition:all 0.2s;
-}
-.modal-close:hover{background:var(--warm);}
 
-@media(max-width:900px){
-    .page-nav{padding:0 24px;}
-    .srv-hero{padding:60px 24px 40px;}
-    .srv-body{grid-template-columns:1fr;padding:40px 24px 60px;gap:40px;}
+/* ---- Hero Intro ---- */
+.srv-hero {
+    padding: 80px 52px 60px;
+    text-align: center;
+    background: radial-gradient(circle at 80% 20%, rgba(212,168,83,0.12) 0%, transparent 60%);
+    position: relative;
+}
+
+.srv-hero::before {
+    content: 'CREATIVE';
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Playfair Display', serif;
+    font-size: 130px;
+    font-weight: 900;
+    color: rgba(58, 33, 71, 0.03);
+    pointer-events: none;
+    user-select: none;
+    white-space: nowrap;
+}
+
+.hero-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+}
+
+.srv-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(38px, 6vw, 56px);
+    font-weight: 900;
+    color: var(--violet);
+    line-height: 1.1;
+    margin-bottom: 18px;
+}
+
+.srv-hero h1 em {
+    font-style: italic;
+    color: var(--accent);
+}
+
+.srv-hero p {
+    font-size: 17px;
+    color: var(--text2);
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+/* ---- Section Container ---- */
+.srv-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 52px;
+}
+
+.section-divider {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--warm) 15%, var(--warm) 85%, transparent);
+    margin: 60px 0;
+}
+
+.block-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: var(--violet);
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.block-subtitle {
+    font-size: 14.5px;
+    color: var(--text3);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* ---- SECTION 1: SERVICES OFFERINGS GRID ---- */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+}
+
+.service-card {
+    background: var(--white);
+    border: 1.5px solid rgba(58, 33, 71, 0.07);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 8px 30px var(--shadow);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px var(--shadow2);
+    border-color: rgba(212, 168, 83, 0.3);
+}
+
+.service-icon {
+    font-size: 40px;
+    color: var(--accent);
+    margin-bottom: 24px;
+}
+
+.service-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    color: var(--violet);
+    margin-bottom: 12px;
+}
+
+.service-card p {
+    font-size: 15px;
+    color: var(--text2);
+    line-height: 1.7;
+    margin-bottom: 24px;
+    flex-grow: 1;
+}
+
+.service-items {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto;
+}
+
+.service-items li {
+    background: var(--cream);
+    border: 1.5px solid var(--warm);
+    color: var(--text2);
+    font-size: 12.5px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 99px;
+    transition: var(--transition);
+}
+
+.service-items li:hover {
+    background: var(--violet);
+    color: var(--white);
+    border-color: var(--violet);
+}
+
+/* ---- SECTION 2: LET'S COLLABORATE GRID ---- */
+.collaborate-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 40px;
+    align-items: start;
+    margin-bottom: 100px;
+}
+
+/* Upwork Card Styles */
+.freelance-card {
+    background: linear-gradient(135deg, #1f1625 0%, #0f0d0b 100%);
+    border: 1.5px solid var(--accent);
+    border-radius: 20px;
+    padding: 44px;
+    box-shadow: 0 12px 40px var(--shadow2);
+    color: var(--cream);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.upwork-logo {
+    font-size: 52px;
+    color: #14a800;
+    margin-bottom: 20px;
+}
+
+.freelance-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    color: var(--white);
+    margin-bottom: 14px;
+}
+
+.freelance-card p {
+    font-size: 15px;
+    color: #a89e90;
+    line-height: 1.7;
+    margin-bottom: 28px;
+}
+
+.freelance-features {
+    list-style: none;
+    margin-bottom: 36px;
+}
+
+.freelance-features li {
+    font-size: 14px;
+    color: #c8bfb0;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.freelance-features li i {
+    color: var(--accent);
+}
+
+.upwork-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #14a800;
+    color: var(--white);
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 15px;
+    border: 2px solid #14a800;
+    transition: var(--transition);
+    width: 100%;
+}
+
+.upwork-btn:hover {
+    background: transparent;
+    color: #14a800;
+}
+
+/* Scheduler Card Styles */
+.scheduler-card {
+    background: var(--white);
+    border: 1.5px solid rgba(58, 33, 71, 0.07);
+    border-radius: 20px;
+    padding: 44px;
+    box-shadow: 0 12px 40px var(--shadow);
+}
+
+.scheduler-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    color: var(--violet);
+    margin-bottom: 12px;
+}
+
+.scheduler-card p {
+    font-size: 14.5px;
+    color: var(--text3);
+    margin-bottom: 28px;
+    line-height: 1.6;
+}
+
+.scheduler-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.scheduler-form input, 
+.scheduler-form select, 
+.scheduler-form textarea {
+    width: 100%;
+    font-family: inherit;
+    font-size: 14.5px;
+    padding: 14px;
+    border: 1.5px solid var(--warm);
+    border-radius: 10px;
+    background: var(--cream);
+    color: var(--text);
+    transition: var(--transition);
+}
+
+.scheduler-form input:focus, 
+.scheduler-form select:focus, 
+.scheduler-form textarea:focus {
+    border-color: var(--accent);
+    background: var(--white);
+    outline: none;
+    box-shadow: 0 0 12px rgba(212, 168, 83, 0.15);
+}
+
+.scheduler-form select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234A3555' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    background-size: 16px;
+    padding-right: 40px;
+}
+
+.scheduler-btn {
+    background: var(--violet);
+    color: var(--white);
+    font-weight: 700;
+    font-size: 15px;
+    padding: 15px;
+    border: 2px solid var(--violet);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    margin-top: 8px;
+}
+
+.scheduler-btn:hover {
+    background: var(--violet2);
+    border-color: var(--violet2);
+}
+
+.scheduler-status {
+    margin-top: 14px;
+    font-size: 14px;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.scheduler-status.success {
+    color: #2e7d32;
+    font-weight: 700;
+}
+
+.scheduler-status.error {
+    color: #c62828;
+}
+
+/* ---- MODAL POPUP ---- */
+.meet-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(26, 16, 32, 0.65);
+    backdrop-filter: blur(8px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 24px;
+}
+
+.meet-modal.open {
+    display: flex;
+}
+
+.modal-card {
+    background: var(--white);
+    border-radius: 24px;
+    border: 1.5px solid var(--accent);
+    padding: 44px;
+    max-width: 550px;
+    width: 100%;
+    box-shadow: 0 24px 64px rgba(58, 33, 71, 0.3);
+    text-align: center;
+    position: relative;
+    animation: modalIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes modalIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-icon {
+    font-size: 56px;
+    color: var(--accent);
+    margin-bottom: 24px;
+}
+
+.modal-card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    color: var(--violet);
+    margin-bottom: 12px;
+}
+
+.modal-card p {
+    font-size: 15px;
+    color: var(--text2);
+    line-height: 1.7;
+    margin-bottom: 28px;
+}
+
+.meet-link-box {
+    background: var(--cream);
+    border: 1.5px solid var(--warm);
+    border-radius: 12px;
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.meet-url {
+    font-family: monospace;
+    font-size: 14px;
+    color: var(--violet);
+    font-weight: 700;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-right: 16px;
+}
+
+.copy-btn {
+    background: var(--violet);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.copy-btn:hover {
+    background: var(--violet2);
+}
+
+.modal-close {
+    background: var(--cream2);
+    color: var(--text2);
+    border: none;
+    border-radius: 12px;
+    padding: 14px 28px;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.modal-close:hover {
+    background: var(--warm);
+}
+
+/* ---- RESPONSIVE MEDIA QUERIES ---- */
+@media (max-width: 1024px) {
+    .collaborate-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+    .freelance-card {
+        height: auto;
+    }
+}
+
+@media (max-width: 900px) {
+    .page-nav { padding: 0 24px; }
+    .srv-hero { padding: 60px 24px 40px; }
+    .srv-container { padding: 0 24px; }
+    .services-grid { grid-template-columns: 1fr; gap: 24px; }
+}
+
+@media (max-width: 600px) {
+    .page-nav { padding: 0 16px; height: 65px; }
+    .form-row { grid-template-columns: 1fr; gap: 18px; }
+    .srv-hero::before { font-size: 80px; top: 10px; }
+    .modal-card { padding: 30px 20px; }
+    .modal-card h2 { font-size: 24px; }
 }
 </style>
 </head>
@@ -144,13 +594,16 @@ a{text-decoration:none;}
     </div>
 </section>
 
-<section class="srv-body">
-    
-    <!-- LEFT COLUMN: SERVICES -->
-    <div>
-        <h2 class="services-section-title">Design Offerings</h2>
+<main class="srv-container">
+
+    <!-- SECTION 1: WHAT I OFFER -->
+    <section>
+        <h2 class="block-title">Design Offerings</h2>
+        <p class="block-subtitle">Explore visual communication and interactive interface options</p>
+        
         <div class="services-grid">
-            <div class="service-card">
+            <!-- Card 1: Graphic Design -->
+            <article class="service-card">
                 <div class="service-icon"><i class="fa-solid fa-palette"></i></div>
                 <h3>Graphic &amp; Poster Design</h3>
                 <p>High-impact visual arts combining rich typography with contextual composition layouts. Expertly balanced layouts for social campaigns, printed pamphlets, and announcements.</p>
@@ -161,9 +614,10 @@ a{text-decoration:none;}
                     <li>Pamphlets</li>
                     <li>Navratri Posters &amp; Tickets</li>
                 </ul>
-            </div>
+            </article>
 
-            <div class="service-card">
+            <!-- Card 2: Web UI/UX Design -->
+            <article class="service-card">
                 <div class="service-icon"><i class="fa-solid fa-desktop"></i></div>
                 <h3>Website UI/UX Design</h3>
                 <p>Clean, purposeful layout designs prioritizing visual excellence and user flow logic. Tailored to represent startups, agencies, portfolios, and commercial landing pages.</p>
@@ -173,56 +627,73 @@ a{text-decoration:none;}
                     <li>Wireframing &amp; Architecture</li>
                     <li>Responsive Web Design</li>
                 </ul>
+            </article>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- SECTION 2: LET'S COLLABORATE -->
+    <section>
+        <h2 class="block-title">Let's Collaborate</h2>
+        <p class="block-subtitle">Choose your preferred method to start working together</p>
+
+        <div class="collaborate-grid">
+            <!-- Upwork Card -->
+            <div class="freelance-card">
+                <div>
+                    <div class="upwork-logo"><i class="fa-brands fa-upwork"></i></div>
+                    <h3>Hire Me on Upwork</h3>
+                    <p>Looking to collaborate securely on Upwork? Contract with managed milestones, secure escrow payments, and direct feedback reviews on the platform.</p>
+                    <ul class="freelance-features">
+                        <li><i class="fa-solid fa-circle-check"></i> Escrow-protected project milestones</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Fixed-price contracts or hourly arrangements</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Structured chats, feedback, and file sharing</li>
+                    </ul>
+                </div>
+                <a href="https://www.upwork.com/freelancers/~017bf110c57b4dd950" target="_blank" class="upwork-btn">
+                    <i class="fa-solid fa-external-link"></i> Go to Upwork Profile
+                </a>
+            </div>
+
+            <!-- Meet Scheduler Form -->
+            <div class="scheduler-card">
+                <h3>Schedule a Meet</h3>
+                <p>Book a free 15-minute Google Meet consultation call. Confirm your preferred time slot and receive the invite link instantly.</p>
+                
+                <form class="scheduler-form" id="meet-form">
+                    <div class="form-row">
+                        <input type="text" id="meet-name" placeholder="Your Name" required>
+                        <input type="email" id="meet-email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-row">
+                        <input type="tel" id="meet-phone" placeholder="Phone / WhatsApp Number" required>
+                        <select id="meet-service" required>
+                            <option value="">Select Service Area</option>
+                            <option value="Website UI/UX Design">Website UI/UX Design</option>
+                            <option value="Event / Promo Poster Making">Event Poster Design</option>
+                            <option value="Advertisement & Pamphlets">Social Media Ads &amp; Pamphlets</option>
+                            <option value="Navratri Festival Branding & Tickets">Navratri Poster &amp; Tickets</option>
+                            <option value="General Design Consultation">General Consultation</option>
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <input type="date" id="meet-date" required>
+                        <input type="time" id="meet-time" required>
+                    </div>
+                    
+                    <textarea id="meet-notes" rows="4" placeholder="Briefly describe your project details..." required></textarea>
+
+                    <button type="submit" class="scheduler-btn" id="meet-submit-btn">
+                        <i class="fa-solid fa-calendar-check"></i> Confirm Meeting Slot
+                    </button>
+                </form>
+                <p class="scheduler-status" id="meet-form-status"></p>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- RIGHT COLUMN: FREELANCE & SCHEDULER -->
-    <div>
-        <!-- Upwork Card -->
-        <div class="freelance-card">
-            <div class="upwork-logo"><i class="fa-brands fa-upwork"></i></div>
-            <h3>Hire Me on Upwork</h3>
-            <p>Looking to collaborate securely on Upwork? Visit my profile to hire me directly for custom contracts, milestones, and project reviews.</p>
-            <a href="https://www.upwork.com/freelancers/~017bf110c57b4dd950" target="_blank" class="upwork-btn">
-                <i class="fa-solid fa-external-link"></i> Go to Upwork Profile
-            </a>
-        </div>
-
-        <!-- Google Meet Scheduler Form -->
-        <div class="scheduler-card">
-            <h3>Schedule a Meet</h3>
-            <p>Book a free 15-minute Google Meet consultation call. Confirm your preferred time slot and receive the invite link instantly.</p>
-            
-            <form class="scheduler-form" id="meet-form">
-                <input type="text" id="meet-name" placeholder="Your Name" required>
-                <input type="email" id="meet-email" placeholder="Your Email" required>
-                <input type="tel" id="meet-phone" placeholder="Phone / WhatsApp Number" required>
-                
-                <select id="meet-service" required>
-                    <option value="">Select Service Area</option>
-                    <option value="Website UI/UX Design">Website UI/UX Design</option>
-                    <option value="Event / Promo Poster Making">Event Poster Design</option>
-                    <option value="Advertisement & Pamphlets">Social Media Ads &amp; Pamphlets</option>
-                    <option value="Navratri Festival Branding & Tickets">Navratri Poster &amp; Tickets</option>
-                    <option value="General Design Consultation">General Consultation</option>
-                </select>
-
-                <div class="date-time-row">
-                    <input type="date" id="meet-date" required>
-                    <input type="time" id="meet-time" required>
-                </div>
-
-                <textarea id="meet-notes" rows="3" placeholder="Briefly describe your project details..." required></textarea>
-
-                <button type="submit" class="scheduler-btn" id="meet-submit-btn">
-                    <i class="fa-solid fa-calendar-check"></i> Book Consultation
-                </button>
-            </form>
-            <p class="scheduler-status" id="meet-form-status"></p>
-        </div>
-    </div>
-</section>
+</main>
 
 <!-- GOOGLE MEET BOOKING SUCCESS MODAL -->
 <div class="meet-modal" id="meet-modal">
