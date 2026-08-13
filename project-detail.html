@@ -100,6 +100,26 @@ img{max-width:100%;display:block;}
 .pd-related-img.hero-art .hero-art-shape-2{width:70px;height:70px;}
 .pd-related-img.hero-art .hero-art-shape-3{width:50px;height:50px;}
 
+/* Project Gallery Grid */
+.pd-gallery-grid{
+    display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:24px;
+}
+.pd-gallery-item{
+    border-radius:16px;overflow:hidden;border:1.5px solid var(--warm);
+    box-shadow:0 8px 24px var(--shadow);transition:transform .35s cubic-bezier(.25,.46,.45,.94), box-shadow .35s ease;
+    background:var(--cream2);
+}
+.pd-gallery-item:hover{
+    transform:translateY(-6px);box-shadow:0 20px 40px var(--shadow2);
+}
+.pd-gallery-img{
+    width:100%;height:auto;display:block;
+    object-fit:cover;object-position:center top;
+}
+@media(max-width:650px){
+    .pd-gallery-grid{grid-template-columns:1fr;gap:18px;}
+}
+
 .pd-empty{max-width:600px;margin:120px auto;text-align:center;padding:0 24px;}
 .pd-empty h2{font-family:'Playfair Display',serif;font-size:32px;color:var(--violet);margin-bottom:14px;}
 .pd-empty p{color:var(--text2);margin-bottom:24px;}
@@ -159,6 +179,22 @@ if (!project) {
 
     const heroMedia = projectHeroArt(project, 'hero-art');
 
+    let galleryHtml = '';
+    if (project.gallery && project.gallery.length > 0) {
+        galleryHtml = `
+            <div class="pd-section" style="margin-top: 48px; opacity: 0; transform: translateY(14px); animation: pdIn .6s cubic-bezier(.25,.46,.45,.94) forwards; animation-delay: .2s;">
+                <h3><i class="fa-solid fa-images"></i> Project Gallery</h3>
+                <div class="pd-gallery-grid">
+                    ${project.gallery.map(img => `
+                        <div class="pd-gallery-item">
+                            <img src="${img}" alt="Poster Design Layout" class="pd-gallery-img">
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+        `;
+    }
+
     content.innerHTML = `
         <section class="pd-hero">
             ${heroMedia}
@@ -188,10 +224,13 @@ if (!project) {
                 <div class="pd-section">
                     <h3><i class="fa-solid fa-flag-checkered"></i> Outcome</h3>
                     <p>${project.outcome}</p>
-                    <div class="pd-actions">
-                        ${(project.actions || []).map(a => `<a href="${a.href}" class="pd-btn gold" ${a.href.startsWith('http') ? 'target="_blank"' : ''}><i class="${a.icon}"></i> ${a.label}</a>`).join('')}
-                        <a href="all-projects.html" class="pd-btn"><i class="fa-solid fa-grip"></i> All Projects</a>
-                    </div>
+                </div>
+
+                ${galleryHtml}
+
+                <div class="pd-actions" style="margin-top: 36px; opacity: 0; transform: translateY(14px); animation: pdIn .6s cubic-bezier(.25,.46,.45,.94) forwards; animation-delay: .25s;">
+                    ${(project.actions || []).map(a => `<a href="${a.href}" class="pd-btn gold" ${a.href.startsWith('http') ? 'target="_blank"' : ''}><i class="${a.icon}"></i> ${a.label}</a>`).join('')}
+                    <a href="all-projects.html" class="pd-btn"><i class="fa-solid fa-grip"></i> All Projects</a>
                 </div>
             </div>
 

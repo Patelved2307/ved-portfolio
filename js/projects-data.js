@@ -250,6 +250,33 @@ const PROJECTS = [
     tools: "HTML, CSS, JavaScript",
     type: "Frontend · Live Project",
     actions: [{ label: "View Figma Design", href: "https://www.figma.com/design/xSVhUwprunlCXPzMKjKFhX/Portfolio?t=z9YSO4fCQnGhEoB2-1", icon: "fa-brands fa-figma" }]
+  },
+  {
+    id: "posters",
+    title: "Creative Poster Designs & Graphic Art",
+    category: "UI/UX",
+    status: "Ongoing",
+    tag: "Graphic Design · Poster Art",
+    icon: "fa-solid fa-palette",
+    accent: ["#D4A853", "#3A2147"],
+    image: "assets/images/ganesha-poster.png",
+    summary: "A series of high-impact cultural and national festival poster designs leveraging typography, color theory, and digital graphics.",
+    overview: "A collection of creative festival and event posters designed to celebrate significant national and cultural events, including Lord Ganesha's arrival, Independence Day, Rath Yatra, and Raksha Bandhan. Each poster utilizes a blend of rich typography, custom-layered digital artwork, and carefully selected color palettes to tell a story.",
+    problem: "Most digital greetings and promotional banners are templated and lack emotional depth. The goal was to design premium poster artwork that honors cultural symbolism, commands attention on social feeds, and maintains clean, legible layouts.",
+    approach: "The creative process involved choosing contextual typography pairings and detailed composition layers. For the Independence Day posters, I integrated patriotic freedom fighters with dynamic tri-color brushes and jet vectors. For Rath Yatra and Raksha Bandhan, I balanced traditional motifs with high-contrast borders and structured text locks. Ganesha utilizes high-contrast dramatic spotlighting to emphasize divinity.",
+    outcome: "A successful series of digital poster designs widely shared on messaging and social platforms, demonstrating core skills in visual hierarchy, composition, and digital illustration.",
+    role: "Graphic Designer & Illustrator",
+    tools: "Photoshop, Illustrator, Canva",
+    type: "Graphic Design · Creative Art",
+    actions: [],
+    gallery: [
+      "assets/images/ganesha-poster.png",
+      "assets/images/independence-poster-1.png",
+      "assets/images/rath-yatra-1.png",
+      "assets/images/rakhi-poster.png",
+      "assets/images/independence-poster-2.png",
+      "assets/images/rath-yatra-2.png"
+    ]
   }
 ];
 
